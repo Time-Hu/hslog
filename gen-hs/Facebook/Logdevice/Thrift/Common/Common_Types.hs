@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module Facebook.Logdevice.Thrift.Common.Common_Types where
+module HStream.Store.Thrift.Common.Common_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -219,14 +219,14 @@ instance Serializable.ThriftSerializable SocketAddress where
   encode = encode_SocketAddress
   decode = decode_SocketAddress
 instance Hashable.Hashable SocketAddress where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` socketAddress_address_family record   `Hashable.hashWithSalt` socketAddress_address record   `Hashable.hashWithSalt` socketAddress_port record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` socketAddress_address_family record   `Hashable.hashWithSalt` socketAddress_address record   `Hashable.hashWithSalt` socketAddress_port record
 instance DeepSeq.NFData SocketAddress where
   rnf _record0 =
     DeepSeq.rnf (socketAddress_address_family _record0) `seq`
     DeepSeq.rnf (socketAddress_address _record0) `seq`
     DeepSeq.rnf (socketAddress_port _record0) `seq`
     ()
-instance Arbitrary.Arbitrary SocketAddress where 
+instance Arbitrary.Arbitrary SocketAddress where
   arbitrary = Monad.liftM SocketAddress (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -285,14 +285,14 @@ instance Serializable.ThriftSerializable NodeID where
   encode = encode_NodeID
   decode = decode_NodeID
 instance Hashable.Hashable NodeID where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeID_node_index record   `Hashable.hashWithSalt` nodeID_address record   `Hashable.hashWithSalt` nodeID_name record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeID_node_index record   `Hashable.hashWithSalt` nodeID_address record   `Hashable.hashWithSalt` nodeID_name record
 instance DeepSeq.NFData NodeID where
   rnf _record9 =
     DeepSeq.rnf (nodeID_node_index _record9) `seq`
     DeepSeq.rnf (nodeID_address _record9) `seq`
     DeepSeq.rnf (nodeID_name _record9) `seq`
     ()
-instance Arbitrary.Arbitrary NodeID where 
+instance Arbitrary.Arbitrary NodeID where
   arbitrary = Monad.liftM NodeID (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -349,13 +349,13 @@ instance Serializable.ThriftSerializable ShardID where
   encode = encode_ShardID
   decode = decode_ShardID
 instance Hashable.Hashable ShardID where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardID_node record   `Hashable.hashWithSalt` shardID_shard_index record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardID_node record   `Hashable.hashWithSalt` shardID_shard_index record
 instance DeepSeq.NFData ShardID where
   rnf _record18 =
     DeepSeq.rnf (shardID_node _record18) `seq`
     DeepSeq.rnf (shardID_shard_index _record18) `seq`
     ()
-instance Arbitrary.Arbitrary ShardID where 
+instance Arbitrary.Arbitrary ShardID where
   arbitrary = Monad.liftM ShardID (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_ShardID = []
@@ -417,7 +417,7 @@ instance Serializable.ThriftSerializable Addresses where
   encode = encode_Addresses
   decode = decode_Addresses
 instance Hashable.Hashable Addresses where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addresses_gossip record   `Hashable.hashWithSalt` addresses_ssl record   `Hashable.hashWithSalt` addresses_admin record   `Hashable.hashWithSalt` addresses_server_to_server record   `Hashable.hashWithSalt` addresses_server_thrift_api record   `Hashable.hashWithSalt` addresses_client_thrift_api record   `Hashable.hashWithSalt` addresses_addresses_per_priority record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addresses_gossip record   `Hashable.hashWithSalt` addresses_ssl record   `Hashable.hashWithSalt` addresses_admin record   `Hashable.hashWithSalt` addresses_server_to_server record   `Hashable.hashWithSalt` addresses_server_thrift_api record   `Hashable.hashWithSalt` addresses_client_thrift_api record   `Hashable.hashWithSalt` addresses_addresses_per_priority record
 instance DeepSeq.NFData Addresses where
   rnf _record26 =
     DeepSeq.rnf (addresses_gossip _record26) `seq`
@@ -428,7 +428,7 @@ instance DeepSeq.NFData Addresses where
     DeepSeq.rnf (addresses_client_thrift_api _record26) `seq`
     DeepSeq.rnf (addresses_addresses_per_priority _record26) `seq`
     ()
-instance Arbitrary.Arbitrary Addresses where 
+instance Arbitrary.Arbitrary Addresses where
   arbitrary = Monad.liftM Addresses (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)

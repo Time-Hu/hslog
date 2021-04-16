@@ -16,7 +16,7 @@ include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/safety.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/settings.thrift"
 
-namespace hs Facebook.Logdevice.Thrift.Admin
+namespace hs HStream.Store.Thrift.Admin
 
 
 

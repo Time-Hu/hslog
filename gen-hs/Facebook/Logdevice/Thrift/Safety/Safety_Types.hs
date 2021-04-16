@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module Facebook.Logdevice.Thrift.Safety.Safety_Types where
+module HStream.Store.Thrift.Safety.Safety_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,8 +47,8 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
-import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
+import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
 
 
 data OperationImpact = INVALID|REBUILDING_STALL|WRITE_AVAILABILITY_LOSS|READ_AVAILABILITY_LOSS|SEQUENCING_CAPACITY_LOSS|STORAGE_CAPACITY_LOSS  deriving (Show,Eq, Typeable.Typeable, Ord, Bounded)
@@ -115,7 +115,7 @@ instance Serializable.ThriftSerializable ShardMetadata where
   encode = encode_ShardMetadata
   decode = decode_ShardMetadata
 instance Hashable.Hashable ShardMetadata where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardMetadata_data_health record   `Hashable.hashWithSalt` shardMetadata_is_alive record   `Hashable.hashWithSalt` shardMetadata_storage_state record   `Hashable.hashWithSalt` shardMetadata_location record   `Hashable.hashWithSalt` shardMetadata_location_per_scope record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardMetadata_data_health record   `Hashable.hashWithSalt` shardMetadata_is_alive record   `Hashable.hashWithSalt` shardMetadata_storage_state record   `Hashable.hashWithSalt` shardMetadata_location record   `Hashable.hashWithSalt` shardMetadata_location_per_scope record
 instance DeepSeq.NFData ShardMetadata where
   rnf _record0 =
     DeepSeq.rnf (shardMetadata_data_health _record0) `seq`
@@ -124,7 +124,7 @@ instance DeepSeq.NFData ShardMetadata where
     DeepSeq.rnf (shardMetadata_location _record0) `seq`
     DeepSeq.rnf (shardMetadata_location_per_scope _record0) `seq`
     ()
-instance Arbitrary.Arbitrary ShardMetadata where 
+instance Arbitrary.Arbitrary ShardMetadata where
   arbitrary = Monad.liftM ShardMetadata (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -199,7 +199,7 @@ instance Serializable.ThriftSerializable ImpactOnEpoch where
   encode = encode_ImpactOnEpoch
   decode = decode_ImpactOnEpoch
 instance Hashable.Hashable ImpactOnEpoch where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` impactOnEpoch_log_id record   `Hashable.hashWithSalt` impactOnEpoch_epoch record   `Hashable.hashWithSalt` impactOnEpoch_storage_set record   `Hashable.hashWithSalt` impactOnEpoch_replication record   `Hashable.hashWithSalt` impactOnEpoch_impact record   `Hashable.hashWithSalt` impactOnEpoch_storage_set_metadata record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` impactOnEpoch_log_id record   `Hashable.hashWithSalt` impactOnEpoch_epoch record   `Hashable.hashWithSalt` impactOnEpoch_storage_set record   `Hashable.hashWithSalt` impactOnEpoch_replication record   `Hashable.hashWithSalt` impactOnEpoch_impact record   `Hashable.hashWithSalt` impactOnEpoch_storage_set_metadata record
 instance DeepSeq.NFData ImpactOnEpoch where
   rnf _record17 =
     DeepSeq.rnf (impactOnEpoch_log_id _record17) `seq`
@@ -209,7 +209,7 @@ instance DeepSeq.NFData ImpactOnEpoch where
     DeepSeq.rnf (impactOnEpoch_impact _record17) `seq`
     DeepSeq.rnf (impactOnEpoch_storage_set_metadata _record17) `seq`
     ()
-instance Arbitrary.Arbitrary ImpactOnEpoch where 
+instance Arbitrary.Arbitrary ImpactOnEpoch where
   arbitrary = Monad.liftM ImpactOnEpoch (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -301,7 +301,7 @@ instance Serializable.ThriftSerializable CheckImpactRequest where
   encode = encode_CheckImpactRequest
   decode = decode_CheckImpactRequest
 instance Hashable.Hashable CheckImpactRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpactRequest_shards record   `Hashable.hashWithSalt` checkImpactRequest_target_storage_state record   `Hashable.hashWithSalt` checkImpactRequest_disable_sequencers record   `Hashable.hashWithSalt` checkImpactRequest_safety_margin record   `Hashable.hashWithSalt` checkImpactRequest_log_ids_to_check record   `Hashable.hashWithSalt` checkImpactRequest_abort_on_negative_impact record   `Hashable.hashWithSalt` checkImpactRequest_return_sample_size record   `Hashable.hashWithSalt` checkImpactRequest_check_metadata_logs record   `Hashable.hashWithSalt` checkImpactRequest_check_internal_logs record   `Hashable.hashWithSalt` checkImpactRequest_check_capacity record   `Hashable.hashWithSalt` checkImpactRequest_max_unavailable_storage_capacity_pct record   `Hashable.hashWithSalt` checkImpactRequest_max_unavailable_sequencing_capacity_pct record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpactRequest_shards record   `Hashable.hashWithSalt` checkImpactRequest_target_storage_state record   `Hashable.hashWithSalt` checkImpactRequest_disable_sequencers record   `Hashable.hashWithSalt` checkImpactRequest_safety_margin record   `Hashable.hashWithSalt` checkImpactRequest_log_ids_to_check record   `Hashable.hashWithSalt` checkImpactRequest_abort_on_negative_impact record   `Hashable.hashWithSalt` checkImpactRequest_return_sample_size record   `Hashable.hashWithSalt` checkImpactRequest_check_metadata_logs record   `Hashable.hashWithSalt` checkImpactRequest_check_internal_logs record   `Hashable.hashWithSalt` checkImpactRequest_check_capacity record   `Hashable.hashWithSalt` checkImpactRequest_max_unavailable_storage_capacity_pct record   `Hashable.hashWithSalt` checkImpactRequest_max_unavailable_sequencing_capacity_pct record
 instance DeepSeq.NFData CheckImpactRequest where
   rnf _record47 =
     DeepSeq.rnf (checkImpactRequest_shards _record47) `seq`
@@ -317,7 +317,7 @@ instance DeepSeq.NFData CheckImpactRequest where
     DeepSeq.rnf (checkImpactRequest_max_unavailable_storage_capacity_pct _record47) `seq`
     DeepSeq.rnf (checkImpactRequest_max_unavailable_sequencing_capacity_pct _record47) `seq`
     ()
-instance Arbitrary.Arbitrary CheckImpactRequest where 
+instance Arbitrary.Arbitrary CheckImpactRequest where
   arbitrary = Monad.liftM CheckImpactRequest (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -425,7 +425,7 @@ instance Serializable.ThriftSerializable CheckImpactResponse where
   encode = encode_CheckImpactResponse
   decode = decode_CheckImpactResponse
 instance Hashable.Hashable CheckImpactResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpactResponse_impact record   `Hashable.hashWithSalt` checkImpactResponse_internal_logs_affected record   `Hashable.hashWithSalt` checkImpactResponse_logs_affected record   `Hashable.hashWithSalt` checkImpactResponse_total_duration record   `Hashable.hashWithSalt` checkImpactResponse_total_logs_checked record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpactResponse_impact record   `Hashable.hashWithSalt` checkImpactResponse_internal_logs_affected record   `Hashable.hashWithSalt` checkImpactResponse_logs_affected record   `Hashable.hashWithSalt` checkImpactResponse_total_duration record   `Hashable.hashWithSalt` checkImpactResponse_total_logs_checked record
 instance DeepSeq.NFData CheckImpactResponse where
   rnf _record79 =
     DeepSeq.rnf (checkImpactResponse_impact _record79) `seq`
@@ -434,7 +434,7 @@ instance DeepSeq.NFData CheckImpactResponse where
     DeepSeq.rnf (checkImpactResponse_total_duration _record79) `seq`
     DeepSeq.rnf (checkImpactResponse_total_logs_checked _record79) `seq`
     ()
-instance Arbitrary.Arbitrary CheckImpactResponse where 
+instance Arbitrary.Arbitrary CheckImpactResponse where
   arbitrary = Monad.liftM CheckImpactResponse (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)

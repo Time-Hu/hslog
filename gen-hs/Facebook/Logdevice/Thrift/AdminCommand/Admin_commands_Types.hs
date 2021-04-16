@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Types where
+module HStream.Store.Thrift.AdminCommand.Admin_commands_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -57,12 +57,12 @@ instance Serializable.ThriftSerializable AdminCommandRequest where
   encode = encode_AdminCommandRequest
   decode = decode_AdminCommandRequest
 instance Hashable.Hashable AdminCommandRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` adminCommandRequest_request record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` adminCommandRequest_request record
 instance DeepSeq.NFData AdminCommandRequest where
   rnf _record0 =
     DeepSeq.rnf (adminCommandRequest_request _record0) `seq`
     ()
-instance Arbitrary.Arbitrary AdminCommandRequest where 
+instance Arbitrary.Arbitrary AdminCommandRequest where
   arbitrary = Monad.liftM AdminCommandRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_AdminCommandRequest = []
              | otherwise = Maybe.catMaybes
@@ -107,12 +107,12 @@ instance Serializable.ThriftSerializable AdminCommandResponse where
   encode = encode_AdminCommandResponse
   decode = decode_AdminCommandResponse
 instance Hashable.Hashable AdminCommandResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` adminCommandResponse_response record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` adminCommandResponse_response record
 instance DeepSeq.NFData AdminCommandResponse where
   rnf _record7 =
     DeepSeq.rnf (adminCommandResponse_response _record7) `seq`
     ()
-instance Arbitrary.Arbitrary AdminCommandResponse where 
+instance Arbitrary.Arbitrary AdminCommandResponse where
   arbitrary = Monad.liftM AdminCommandResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_AdminCommandResponse = []
              | otherwise = Maybe.catMaybes

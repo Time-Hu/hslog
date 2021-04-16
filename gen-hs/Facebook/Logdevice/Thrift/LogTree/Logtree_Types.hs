@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module Facebook.Logdevice.Thrift.LogTree.Logtree_Types where
+module HStream.Store.Thrift.LogTree.Logtree_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,7 +47,7 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
 
 
 data LogGroupOperation = APPENDS|READS|APPENDS_OUT  deriving (Show,Eq, Typeable.Typeable, Ord, Bounded)
@@ -98,7 +98,7 @@ instance Serializable.ThriftSerializable LogTreeInfo where
   encode = encode_LogTreeInfo
   decode = decode_LogTreeInfo
 instance Hashable.Hashable LogTreeInfo where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logTreeInfo_version record   `Hashable.hashWithSalt` logTreeInfo_num_logs record   `Hashable.hashWithSalt` logTreeInfo_max_backlog_seconds record   `Hashable.hashWithSalt` logTreeInfo_is_fully_loaded record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logTreeInfo_version record   `Hashable.hashWithSalt` logTreeInfo_num_logs record   `Hashable.hashWithSalt` logTreeInfo_max_backlog_seconds record   `Hashable.hashWithSalt` logTreeInfo_is_fully_loaded record
 instance DeepSeq.NFData LogTreeInfo where
   rnf _record0 =
     DeepSeq.rnf (logTreeInfo_version _record0) `seq`
@@ -106,7 +106,7 @@ instance DeepSeq.NFData LogTreeInfo where
     DeepSeq.rnf (logTreeInfo_max_backlog_seconds _record0) `seq`
     DeepSeq.rnf (logTreeInfo_is_fully_loaded _record0) `seq`
     ()
-instance Arbitrary.Arbitrary LogTreeInfo where 
+instance Arbitrary.Arbitrary LogTreeInfo where
   arbitrary = Monad.liftM LogTreeInfo (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -170,14 +170,14 @@ instance Serializable.ThriftSerializable TolerableFailureDomain where
   encode = encode_TolerableFailureDomain
   decode = decode_TolerableFailureDomain
 instance Hashable.Hashable TolerableFailureDomain where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` tolerableFailureDomain_domain_legacy record   `Hashable.hashWithSalt` tolerableFailureDomain_count record   `Hashable.hashWithSalt` tolerableFailureDomain_domain record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` tolerableFailureDomain_domain_legacy record   `Hashable.hashWithSalt` tolerableFailureDomain_count record   `Hashable.hashWithSalt` tolerableFailureDomain_domain record
 instance DeepSeq.NFData TolerableFailureDomain where
   rnf _record10 =
     DeepSeq.rnf (tolerableFailureDomain_domain_legacy _record10) `seq`
     DeepSeq.rnf (tolerableFailureDomain_count _record10) `seq`
     DeepSeq.rnf (tolerableFailureDomain_domain _record10) `seq`
     ()
-instance Arbitrary.Arbitrary TolerableFailureDomain where 
+instance Arbitrary.Arbitrary TolerableFailureDomain where
   arbitrary = Monad.liftM TolerableFailureDomain (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -240,7 +240,7 @@ instance Serializable.ThriftSerializable ReplicationInfo where
   encode = encode_ReplicationInfo
   decode = decode_ReplicationInfo
 instance Hashable.Hashable ReplicationInfo where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` replicationInfo_version record   `Hashable.hashWithSalt` replicationInfo_narrowest_replication_legacy record   `Hashable.hashWithSalt` replicationInfo_smallest_replication_factor record   `Hashable.hashWithSalt` replicationInfo_tolerable_failure_domains record   `Hashable.hashWithSalt` replicationInfo_narrowest_replication record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` replicationInfo_version record   `Hashable.hashWithSalt` replicationInfo_narrowest_replication_legacy record   `Hashable.hashWithSalt` replicationInfo_smallest_replication_factor record   `Hashable.hashWithSalt` replicationInfo_tolerable_failure_domains record   `Hashable.hashWithSalt` replicationInfo_narrowest_replication record
 instance DeepSeq.NFData ReplicationInfo where
   rnf _record19 =
     DeepSeq.rnf (replicationInfo_version _record19) `seq`
@@ -249,7 +249,7 @@ instance DeepSeq.NFData ReplicationInfo where
     DeepSeq.rnf (replicationInfo_tolerable_failure_domains _record19) `seq`
     DeepSeq.rnf (replicationInfo_narrowest_replication _record19) `seq`
     ()
-instance Arbitrary.Arbitrary ReplicationInfo where 
+instance Arbitrary.Arbitrary ReplicationInfo where
   arbitrary = Monad.liftM ReplicationInfo (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -318,14 +318,14 @@ instance Serializable.ThriftSerializable LogGroupCustomCountersRequest where
   encode = encode_LogGroupCustomCountersRequest
   decode = decode_LogGroupCustomCountersRequest
 instance Hashable.Hashable LogGroupCustomCountersRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupCustomCountersRequest_time_period record   `Hashable.hashWithSalt` logGroupCustomCountersRequest_keys record   `Hashable.hashWithSalt` logGroupCustomCountersRequest_log_group_path record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupCustomCountersRequest_time_period record   `Hashable.hashWithSalt` logGroupCustomCountersRequest_keys record   `Hashable.hashWithSalt` logGroupCustomCountersRequest_log_group_path record
 instance DeepSeq.NFData LogGroupCustomCountersRequest where
   rnf _record42 =
     DeepSeq.rnf (logGroupCustomCountersRequest_time_period _record42) `seq`
     DeepSeq.rnf (logGroupCustomCountersRequest_keys _record42) `seq`
     DeepSeq.rnf (logGroupCustomCountersRequest_log_group_path _record42) `seq`
     ()
-instance Arbitrary.Arbitrary LogGroupCustomCountersRequest where 
+instance Arbitrary.Arbitrary LogGroupCustomCountersRequest where
   arbitrary = Monad.liftM LogGroupCustomCountersRequest (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -382,13 +382,13 @@ instance Serializable.ThriftSerializable LogGroupCustomCounter where
   encode = encode_LogGroupCustomCounter
   decode = decode_LogGroupCustomCounter
 instance Hashable.Hashable LogGroupCustomCounter where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupCustomCounter_key record   `Hashable.hashWithSalt` logGroupCustomCounter_val record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupCustomCounter_key record   `Hashable.hashWithSalt` logGroupCustomCounter_val record
 instance DeepSeq.NFData LogGroupCustomCounter where
   rnf _record55 =
     DeepSeq.rnf (logGroupCustomCounter_key _record55) `seq`
     DeepSeq.rnf (logGroupCustomCounter_val _record55) `seq`
     ()
-instance Arbitrary.Arbitrary LogGroupCustomCounter where 
+instance Arbitrary.Arbitrary LogGroupCustomCounter where
   arbitrary = Monad.liftM LogGroupCustomCounter (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_LogGroupCustomCounter = []
@@ -438,12 +438,12 @@ instance Serializable.ThriftSerializable LogGroupCustomCountersResponse where
   encode = encode_LogGroupCustomCountersResponse
   decode = decode_LogGroupCustomCountersResponse
 instance Hashable.Hashable LogGroupCustomCountersResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupCustomCountersResponse_counters record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupCustomCountersResponse_counters record
 instance DeepSeq.NFData LogGroupCustomCountersResponse where
   rnf _record63 =
     DeepSeq.rnf (logGroupCustomCountersResponse_counters _record63) `seq`
     ()
-instance Arbitrary.Arbitrary LogGroupCustomCountersResponse where 
+instance Arbitrary.Arbitrary LogGroupCustomCountersResponse where
   arbitrary = Monad.liftM LogGroupCustomCountersResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_LogGroupCustomCountersResponse = []
              | otherwise = Maybe.catMaybes
@@ -490,13 +490,13 @@ instance Serializable.ThriftSerializable LogGroupThroughput where
   encode = encode_LogGroupThroughput
   decode = decode_LogGroupThroughput
 instance Hashable.Hashable LogGroupThroughput where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupThroughput_operation record   `Hashable.hashWithSalt` logGroupThroughput_results record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupThroughput_operation record   `Hashable.hashWithSalt` logGroupThroughput_results record
 instance DeepSeq.NFData LogGroupThroughput where
   rnf _record80 =
     DeepSeq.rnf (logGroupThroughput_operation _record80) `seq`
     DeepSeq.rnf (logGroupThroughput_results _record80) `seq`
     ()
-instance Arbitrary.Arbitrary LogGroupThroughput where 
+instance Arbitrary.Arbitrary LogGroupThroughput where
   arbitrary = Monad.liftM LogGroupThroughput (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_LogGroupThroughput = []
@@ -550,14 +550,14 @@ instance Serializable.ThriftSerializable LogGroupThroughputRequest where
   encode = encode_LogGroupThroughputRequest
   decode = decode_LogGroupThroughputRequest
 instance Hashable.Hashable LogGroupThroughputRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupThroughputRequest_operation record   `Hashable.hashWithSalt` logGroupThroughputRequest_time_period record   `Hashable.hashWithSalt` logGroupThroughputRequest_log_group_name record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupThroughputRequest_operation record   `Hashable.hashWithSalt` logGroupThroughputRequest_time_period record   `Hashable.hashWithSalt` logGroupThroughputRequest_log_group_name record
 instance DeepSeq.NFData LogGroupThroughputRequest where
   rnf _record92 =
     DeepSeq.rnf (logGroupThroughputRequest_operation _record92) `seq`
     DeepSeq.rnf (logGroupThroughputRequest_time_period _record92) `seq`
     DeepSeq.rnf (logGroupThroughputRequest_log_group_name _record92) `seq`
     ()
-instance Arbitrary.Arbitrary LogGroupThroughputRequest where 
+instance Arbitrary.Arbitrary LogGroupThroughputRequest where
   arbitrary = Monad.liftM LogGroupThroughputRequest (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -612,12 +612,12 @@ instance Serializable.ThriftSerializable LogGroupThroughputResponse where
   encode = encode_LogGroupThroughputResponse
   decode = decode_LogGroupThroughputResponse
 instance Hashable.Hashable LogGroupThroughputResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupThroughputResponse_throughput record  
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` logGroupThroughputResponse_throughput record
 instance DeepSeq.NFData LogGroupThroughputResponse where
   rnf _record105 =
     DeepSeq.rnf (logGroupThroughputResponse_throughput _record105) `seq`
     ()
-instance Arbitrary.Arbitrary LogGroupThroughputResponse where 
+instance Arbitrary.Arbitrary LogGroupThroughputResponse where
   arbitrary = Monad.liftM LogGroupThroughputResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_LogGroupThroughputResponse = []
              | otherwise = Maybe.catMaybes

@@ -9,7 +9,7 @@
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
 
-namespace hs Facebook.Logdevice.Thrift.Safety
+namespace hs HStream.Store.Thrift.Safety
 
 
 enum OperationImpact {

@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs Facebook.Logdevice.Thrift.Settings
+namespace hs HStream.Store.Thrift.Settings
 
 
 /*

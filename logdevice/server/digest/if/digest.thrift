@@ -11,7 +11,7 @@
 
 include "/Workplace/logth/hslog/common/fb303/if/fb303.thrift"
 
-namespace hs Facebook.Logdevice.Thrift.digest
+namespace hs HStream.Store.Thrift.digest
 
 // *** Represents a point in time within a log.
 union LogTag {
