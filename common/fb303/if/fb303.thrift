@@ -15,14 +15,7 @@
  *
  * @author Mark Slee <mcslee@facebook.com>
  */
-namespace java com.facebook.fbcode.fb303
-namespace java.swift com.facebook.swift.fb303
-namespace cpp facebook.fb303
-namespace py.asyncio fb303_asyncio.fb303
-namespace perl fb303
-namespace php fb303
-namespace node_module fb303
-namespace go common.fb303.if.fb303
+namespace hs Facebook.FB303
 
 /**
  * Common status reporting mechanism across all services

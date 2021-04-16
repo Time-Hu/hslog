@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace cpp2 facebook.logdevice.replicated_state_machine.thrift
+namespace hs Facebook.Logdevice.ReplicatedStateMachine.Thrift
 
 typedef i64 (cpp2.type = "std::uint64_t") u64
 

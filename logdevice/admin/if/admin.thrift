@@ -16,11 +16,9 @@ include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/safety.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/settings.thrift"
 
-namespace cpp2 facebook.logdevice.thrift
-namespace go logdevice.admin.if.admin
-namespace py3 logdevice
-namespace php LogDevice
-namespace wiki Thriftdoc.LogDevice.AdminAPI
+namespace hs Facebook.Logdevice.Thrift.Admin
+
+
 
 // *** AdminAPI Service
 service AdminAPI extends fb303.FacebookService {

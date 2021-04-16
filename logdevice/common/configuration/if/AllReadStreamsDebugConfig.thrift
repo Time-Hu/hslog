@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace py3 logdevice.configuration
-namespace
-  cpp2 facebook.logdevice.configuration.all_read_streams_debug_config.thrift
+namespace hs Facebook.Logdevice.Configuration.AllReadStreamsDebugConfig.Thrift
 
 const string kMatchAll = "*";
 

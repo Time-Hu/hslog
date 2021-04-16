@@ -6,9 +6,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace cpp2 facebook.logdevice.membership.thrift
-namespace go logdevice.common.membership.Membership
-namespace py3 logdevice.membership
+namespace cpp2 facebook.logdevice.membership.thrift.Membership
+
 
 typedef byte (cpp2.type = "std::uint8_t") u8
 typedef i16 (cpp2.type = "std::uint16_t") u16

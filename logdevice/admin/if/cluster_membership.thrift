@@ -9,9 +9,7 @@
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
 
-namespace cpp2 facebook.logdevice.thrift
-namespace go logdevice.admin.if.cluster_membership
-namespace py3 logdevice.admin
+namespace hs Facebook.Logdevice.Thrift.ClusterMembership
 
 /**
  * This enum contains all the possible ways the cluster membership change

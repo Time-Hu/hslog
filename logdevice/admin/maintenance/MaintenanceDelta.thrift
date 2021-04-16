@@ -9,7 +9,7 @@
 include "/Workplace/logth/hslog/logdevice/admin/if/maintenance.thrift"
 
 
-namespace cpp2 facebook.logdevice.maintenance
+namespace hs Facebook.Logdevice.Maintenance
 
 union MaintenanceDelta {
   1: list<maintenance.MaintenanceDefinition> apply_maintenances,

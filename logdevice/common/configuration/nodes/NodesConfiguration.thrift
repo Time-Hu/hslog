@@ -9,7 +9,7 @@
 include "/Workplace/logth/hslog/logdevice/common/membership/Membership.thrift"
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
-namespace cpp2 facebook.logdevice.configuration.nodes.thrift
+namespace hs Facebook.Logdevice.Configuration.Nodes.Thrift
 
 typedef byte (cpp2.type = "std::uint8_t") u8
 typedef i16 (cpp2.type = "std::uint16_t") u16

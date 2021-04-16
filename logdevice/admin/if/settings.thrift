@@ -6,11 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace cpp2 facebook.logdevice.thrift
-namespace go logdevice.admin.if.settings
-namespace py3 logdevice.admin
-namespace php LogDevice
-namespace wiki Thriftdoc.LogDevice.Settings
+namespace hs Facebook.Logdevice.Thrift.Settings
 
 
 /*

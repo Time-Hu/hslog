@@ -6,11 +6,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace cpp2 facebook.logdevice.thrift
-namespace go logdevice.admin.if.admin_commands
-namespace py3 logdevice.admin
-namespace php LogDevice
-namespace wiki Thriftdoc.LogDevice.AdminCommands
+namespace hs Facebook.Logdevice.Thrift.AdminCommand
+
 
 struct AdminCommandRequest {
   1: string request;

@@ -8,7 +8,7 @@
 
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
-namespace cpp2 facebook.logdevice.epoch_store.thrift
+namespace hs facebook.logdevice.epochStore.thrift
 
 typedef byte (cpp2.type = "std::uint8_t") u8
 typedef i16 (cpp2.type = "std::uint16_t") u16

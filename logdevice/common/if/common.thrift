@@ -6,11 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace cpp2 facebook.logdevice.thrift
-namespace go logdevice.common.if.common
-namespace py3 logdevice
-namespace php LogDevice
-namespace wiki Thriftdoc.LogDevice.Common
+namespace hs Facebook.Logdevice.Thrift.Common
 
 /**
  * Because thrift doesn't have a u64.

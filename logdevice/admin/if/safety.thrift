@@ -9,11 +9,7 @@
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
 
-namespace cpp2 facebook.logdevice.thrift
-namespace go logdevice.admin.if.safety
-namespace py3 logdevice.admin
-namespace php LogDevice
-namespace wiki Thriftdoc.LogDevice.Safety
+namespace hs Facebook.Logdevice.Thrift.Safety
 
 
 enum OperationImpact {
