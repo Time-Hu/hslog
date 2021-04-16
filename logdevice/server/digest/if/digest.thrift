@@ -9,7 +9,7 @@
  * its related supporting types.
  */
 
-include "common/fb303/if/fb303.thrift"
+include "/Workplace/logth/hslog/common/fb303/if/fb303.thrift"
 
 namespace cpp2 facebook.logdevice.thrift.digest
 

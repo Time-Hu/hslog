@@ -19,7 +19,7 @@ typedef u16 node_idx
 
 ///////////// StorageMembership ///////////////////
 
-// keep consistent with /Workplace/logth/logdevice/logdevice/common/membership/StorageState.h
+// keep consistent with /Workplace/logth/hslog/logdevice/common/membership/StorageState.h
 enum StorageState  {
   NONE = 0,
   NONE_TO_RO = 1,

@@ -5,16 +5,16 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-include "/Workplace/logth/logdevice/common/fb303/if/fb303.thrift"
-include "/Workplace/logth/logdevice/logdevice/common/if/common.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/admin_commands.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/cluster_membership.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/exceptions.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/logtree.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/maintenance.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/nodes.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/safety.thrift"
-include "/Workplace/logth/logdevice/logdevice/admin/if/settings.thrift"
+include "/Workplace/logth/hslog/common/fb303/if/fb303.thrift"
+include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/admin_commands.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/cluster_membership.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/exceptions.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/logtree.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/maintenance.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/safety.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/settings.thrift"
 
 namespace cpp2 facebook.logdevice.thrift
 namespace go logdevice.admin.if.admin

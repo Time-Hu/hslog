@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-include "/Workplace/logth/logdevice/logdevice/admin/if/maintenance.thrift"
+include "/Workplace/logth/hslog/logdevice/admin/if/maintenance.thrift"
 
 
 namespace cpp2 facebook.logdevice.maintenance

@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-include "/Workplace/logth/logdevice/logdevice/common/if/common.thrift"
+include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
 namespace cpp2 facebook.logdevice.thrift
 namespace go logdevice.admin.if.logtree

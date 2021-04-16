@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-include "/Workplace/logth/logdevice/logdevice/common/if/common.thrift"
+include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
 namespace cpp2 facebook.logdevice.logsconfig
 namespace py3 logdevice
@@ -68,7 +68,7 @@ struct LogAttr {
 
 /**
  * This is the set of attributes that can be set to a log-group or directory.
- * See (/Workplace/logth/logdevice/logdevice/include/LogAttributes.h) for the full set of attributes.
+ * See (/Workplace/logth/hslog/logdevice/include/LogAttributes.h) for the full set of attributes.
  */
 struct LogAttrs {
   1: list<LogAttr> attributes;
