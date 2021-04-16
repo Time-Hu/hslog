@@ -8,7 +8,7 @@
 
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
-namespace hs HStream.Store.Thrift.LogTree
+namespace hs Facebook.Logdevice.Thrift.LogTree
 
 
 // Response of getReplicationInfo()

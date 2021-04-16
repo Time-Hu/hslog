@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Nodes.Nodes_Types where
+module Facebook.Logdevice.Thrift.Nodes.Nodes_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,7 +47,7 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
 import qualified Membership_Types as Membership_Types
 
 
@@ -399,12 +399,12 @@ instance Serializable.ThriftSerializable SequencerConfig where
   encode = encode_SequencerConfig
   decode = decode_SequencerConfig
 instance Hashable.Hashable SequencerConfig where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` sequencerConfig_weight record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` sequencerConfig_weight record  
 instance DeepSeq.NFData SequencerConfig where
   rnf _record0 =
     DeepSeq.rnf (sequencerConfig_weight _record0) `seq`
     ()
-instance Arbitrary.Arbitrary SequencerConfig where
+instance Arbitrary.Arbitrary SequencerConfig where 
   arbitrary = Monad.liftM SequencerConfig (Arbitrary.arbitrary)
   shrink obj | obj == default_SequencerConfig = []
              | otherwise = Maybe.catMaybes
@@ -451,13 +451,13 @@ instance Serializable.ThriftSerializable StorageConfig where
   encode = encode_StorageConfig
   decode = decode_StorageConfig
 instance Hashable.Hashable StorageConfig where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` storageConfig_weight record   `Hashable.hashWithSalt` storageConfig_num_shards record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` storageConfig_weight record   `Hashable.hashWithSalt` storageConfig_num_shards record  
 instance DeepSeq.NFData StorageConfig where
   rnf _record7 =
     DeepSeq.rnf (storageConfig_weight _record7) `seq`
     DeepSeq.rnf (storageConfig_num_shards _record7) `seq`
     ()
-instance Arbitrary.Arbitrary StorageConfig where
+instance Arbitrary.Arbitrary StorageConfig where 
   arbitrary = Monad.liftM StorageConfig (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_StorageConfig = []
@@ -525,7 +525,7 @@ instance Serializable.ThriftSerializable NodeConfig where
   encode = encode_NodeConfig
   decode = decode_NodeConfig
 instance Hashable.Hashable NodeConfig where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeConfig_node_index record   `Hashable.hashWithSalt` nodeConfig_data_address record   `Hashable.hashWithSalt` nodeConfig_roles record   `Hashable.hashWithSalt` nodeConfig_other_addresses record   `Hashable.hashWithSalt` nodeConfig_location record   `Hashable.hashWithSalt` nodeConfig_sequencer record   `Hashable.hashWithSalt` nodeConfig_storage record   `Hashable.hashWithSalt` nodeConfig_location_per_scope record   `Hashable.hashWithSalt` nodeConfig_name record   `Hashable.hashWithSalt` nodeConfig_tags record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeConfig_node_index record   `Hashable.hashWithSalt` nodeConfig_data_address record   `Hashable.hashWithSalt` nodeConfig_roles record   `Hashable.hashWithSalt` nodeConfig_other_addresses record   `Hashable.hashWithSalt` nodeConfig_location record   `Hashable.hashWithSalt` nodeConfig_sequencer record   `Hashable.hashWithSalt` nodeConfig_storage record   `Hashable.hashWithSalt` nodeConfig_location_per_scope record   `Hashable.hashWithSalt` nodeConfig_name record   `Hashable.hashWithSalt` nodeConfig_tags record  
 instance DeepSeq.NFData NodeConfig where
   rnf _record15 =
     DeepSeq.rnf (nodeConfig_node_index _record15) `seq`
@@ -539,7 +539,7 @@ instance DeepSeq.NFData NodeConfig where
     DeepSeq.rnf (nodeConfig_name _record15) `seq`
     DeepSeq.rnf (nodeConfig_tags _record15) `seq`
     ()
-instance Arbitrary.Arbitrary NodeConfig where
+instance Arbitrary.Arbitrary NodeConfig where 
   arbitrary = Monad.liftM NodeConfig (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -637,7 +637,7 @@ instance Serializable.ThriftSerializable ShardMaintenanceProgress where
   encode = encode_ShardMaintenanceProgress
   decode = decode_ShardMaintenanceProgress
 instance Hashable.Hashable ShardMaintenanceProgress where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardMaintenanceProgress_status record   `Hashable.hashWithSalt` shardMaintenanceProgress_target_states record   `Hashable.hashWithSalt` shardMaintenanceProgress_created_at record   `Hashable.hashWithSalt` shardMaintenanceProgress_last_updated_at record   `Hashable.hashWithSalt` shardMaintenanceProgress_associated_group_ids record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardMaintenanceProgress_status record   `Hashable.hashWithSalt` shardMaintenanceProgress_target_states record   `Hashable.hashWithSalt` shardMaintenanceProgress_created_at record   `Hashable.hashWithSalt` shardMaintenanceProgress_last_updated_at record   `Hashable.hashWithSalt` shardMaintenanceProgress_associated_group_ids record  
 instance DeepSeq.NFData ShardMaintenanceProgress where
   rnf _record47 =
     DeepSeq.rnf (shardMaintenanceProgress_status _record47) `seq`
@@ -646,7 +646,7 @@ instance DeepSeq.NFData ShardMaintenanceProgress where
     DeepSeq.rnf (shardMaintenanceProgress_last_updated_at _record47) `seq`
     DeepSeq.rnf (shardMaintenanceProgress_associated_group_ids _record47) `seq`
     ()
-instance Arbitrary.Arbitrary ShardMaintenanceProgress where
+instance Arbitrary.Arbitrary ShardMaintenanceProgress where 
   arbitrary = Monad.liftM ShardMaintenanceProgress (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -719,7 +719,7 @@ instance Serializable.ThriftSerializable SequencerMaintenanceProgress where
   encode = encode_SequencerMaintenanceProgress
   decode = decode_SequencerMaintenanceProgress
 instance Hashable.Hashable SequencerMaintenanceProgress where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` sequencerMaintenanceProgress_status record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_target_state record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_created_at record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_last_updated_at record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_associated_group_ids record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` sequencerMaintenanceProgress_status record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_target_state record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_created_at record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_last_updated_at record   `Hashable.hashWithSalt` sequencerMaintenanceProgress_associated_group_ids record  
 instance DeepSeq.NFData SequencerMaintenanceProgress where
   rnf _record66 =
     DeepSeq.rnf (sequencerMaintenanceProgress_status _record66) `seq`
@@ -728,7 +728,7 @@ instance DeepSeq.NFData SequencerMaintenanceProgress where
     DeepSeq.rnf (sequencerMaintenanceProgress_last_updated_at _record66) `seq`
     DeepSeq.rnf (sequencerMaintenanceProgress_associated_group_ids _record66) `seq`
     ()
-instance Arbitrary.Arbitrary SequencerMaintenanceProgress where
+instance Arbitrary.Arbitrary SequencerMaintenanceProgress where 
   arbitrary = Monad.liftM SequencerMaintenanceProgress (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -801,7 +801,7 @@ instance Serializable.ThriftSerializable ShardState where
   encode = encode_ShardState
   decode = decode_ShardState
 instance Hashable.Hashable ShardState where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardState_data_health record   `Hashable.hashWithSalt` shardState_current_operational_state record   `Hashable.hashWithSalt` shardState_maintenance record   `Hashable.hashWithSalt` shardState_storage_state record   `Hashable.hashWithSalt` shardState_metadata_state record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` shardState_data_health record   `Hashable.hashWithSalt` shardState_current_operational_state record   `Hashable.hashWithSalt` shardState_maintenance record   `Hashable.hashWithSalt` shardState_storage_state record   `Hashable.hashWithSalt` shardState_metadata_state record  
 instance DeepSeq.NFData ShardState where
   rnf _record81 =
     DeepSeq.rnf (shardState_data_health _record81) `seq`
@@ -810,7 +810,7 @@ instance DeepSeq.NFData ShardState where
     DeepSeq.rnf (shardState_storage_state _record81) `seq`
     DeepSeq.rnf (shardState_metadata_state _record81) `seq`
     ()
-instance Arbitrary.Arbitrary ShardState where
+instance Arbitrary.Arbitrary ShardState where 
   arbitrary = Monad.liftM ShardState (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -877,13 +877,13 @@ instance Serializable.ThriftSerializable SequencerState where
   encode = encode_SequencerState
   decode = decode_SequencerState
 instance Hashable.Hashable SequencerState where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` sequencerState_state record   `Hashable.hashWithSalt` sequencerState_maintenance record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` sequencerState_state record   `Hashable.hashWithSalt` sequencerState_maintenance record  
 instance DeepSeq.NFData SequencerState where
   rnf _record92 =
     DeepSeq.rnf (sequencerState_state _record92) `seq`
     DeepSeq.rnf (sequencerState_maintenance _record92) `seq`
     ()
-instance Arbitrary.Arbitrary SequencerState where
+instance Arbitrary.Arbitrary SequencerState where 
   arbitrary = Monad.liftM SequencerState (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_SequencerState = []
@@ -943,7 +943,7 @@ instance Serializable.ThriftSerializable NodeState where
   encode = encode_NodeState
   decode = decode_NodeState
 instance Hashable.Hashable NodeState where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeState_node_index record   `Hashable.hashWithSalt` nodeState_daemon_state record   `Hashable.hashWithSalt` nodeState_sequencer_state record   `Hashable.hashWithSalt` nodeState_shard_states record   `Hashable.hashWithSalt` nodeState_config record   `Hashable.hashWithSalt` nodeState_daemon_health_status record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeState_node_index record   `Hashable.hashWithSalt` nodeState_daemon_state record   `Hashable.hashWithSalt` nodeState_sequencer_state record   `Hashable.hashWithSalt` nodeState_shard_states record   `Hashable.hashWithSalt` nodeState_config record   `Hashable.hashWithSalt` nodeState_daemon_health_status record  
 instance DeepSeq.NFData NodeState where
   rnf _record100 =
     DeepSeq.rnf (nodeState_node_index _record100) `seq`
@@ -953,7 +953,7 @@ instance DeepSeq.NFData NodeState where
     DeepSeq.rnf (nodeState_config _record100) `seq`
     DeepSeq.rnf (nodeState_daemon_health_status _record100) `seq`
     ()
-instance Arbitrary.Arbitrary NodeState where
+instance Arbitrary.Arbitrary NodeState where 
   arbitrary = Monad.liftM NodeState (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1027,14 +1027,14 @@ instance Serializable.ThriftSerializable NodesFilter where
   encode = encode_NodesFilter
   decode = decode_NodesFilter
 instance Hashable.Hashable NodesFilter where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesFilter_node record   `Hashable.hashWithSalt` nodesFilter_role record   `Hashable.hashWithSalt` nodesFilter_location record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesFilter_node record   `Hashable.hashWithSalt` nodesFilter_role record   `Hashable.hashWithSalt` nodesFilter_location record  
 instance DeepSeq.NFData NodesFilter where
   rnf _record116 =
     DeepSeq.rnf (nodesFilter_node _record116) `seq`
     DeepSeq.rnf (nodesFilter_role _record116) `seq`
     DeepSeq.rnf (nodesFilter_location _record116) `seq`
     ()
-instance Arbitrary.Arbitrary NodesFilter where
+instance Arbitrary.Arbitrary NodesFilter where 
   arbitrary = Monad.liftM NodesFilter (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1091,13 +1091,13 @@ instance Serializable.ThriftSerializable NodesConfigResponse where
   encode = encode_NodesConfigResponse
   decode = decode_NodesConfigResponse
 instance Hashable.Hashable NodesConfigResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesConfigResponse_nodes record   `Hashable.hashWithSalt` nodesConfigResponse_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesConfigResponse_nodes record   `Hashable.hashWithSalt` nodesConfigResponse_version record  
 instance DeepSeq.NFData NodesConfigResponse where
   rnf _record125 =
     DeepSeq.rnf (nodesConfigResponse_nodes _record125) `seq`
     DeepSeq.rnf (nodesConfigResponse_version _record125) `seq`
     ()
-instance Arbitrary.Arbitrary NodesConfigResponse where
+instance Arbitrary.Arbitrary NodesConfigResponse where 
   arbitrary = Monad.liftM NodesConfigResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_NodesConfigResponse = []
@@ -1149,13 +1149,13 @@ instance Serializable.ThriftSerializable NodesStateResponse where
   encode = encode_NodesStateResponse
   decode = decode_NodesStateResponse
 instance Hashable.Hashable NodesStateResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesStateResponse_states record   `Hashable.hashWithSalt` nodesStateResponse_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesStateResponse_states record   `Hashable.hashWithSalt` nodesStateResponse_version record  
 instance DeepSeq.NFData NodesStateResponse where
   rnf _record137 =
     DeepSeq.rnf (nodesStateResponse_states _record137) `seq`
     DeepSeq.rnf (nodesStateResponse_version _record137) `seq`
     ()
-instance Arbitrary.Arbitrary NodesStateResponse where
+instance Arbitrary.Arbitrary NodesStateResponse where 
   arbitrary = Monad.liftM NodesStateResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_NodesStateResponse = []
@@ -1207,13 +1207,13 @@ instance Serializable.ThriftSerializable NodesStateRequest where
   encode = encode_NodesStateRequest
   decode = decode_NodesStateRequest
 instance Hashable.Hashable NodesStateRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesStateRequest_filter record   `Hashable.hashWithSalt` nodesStateRequest_force record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesStateRequest_filter record   `Hashable.hashWithSalt` nodesStateRequest_force record  
 instance DeepSeq.NFData NodesStateRequest where
   rnf _record149 =
     DeepSeq.rnf (nodesStateRequest_filter _record149) `seq`
     DeepSeq.rnf (nodesStateRequest_force _record149) `seq`
     ()
-instance Arbitrary.Arbitrary NodesStateRequest where
+instance Arbitrary.Arbitrary NodesStateRequest where 
   arbitrary = Monad.liftM NodesStateRequest (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_NodesStateRequest = []

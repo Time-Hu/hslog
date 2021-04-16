@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Admin.AdminAPI where
+module Facebook.Logdevice.Thrift.Admin.AdminAPI where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -48,20 +48,20 @@ import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
 import qualified Facebook.FB303.Fb303_Types as Fb303_Types
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
-import qualified HStream.Store.Thrift.AdminCommand.Admin_commands_Types as Admin_commands_Types
-import qualified HStream.Store.Thrift.ClusterMembership.Cluster_membership_Types as Cluster_membership_Types
-import qualified HStream.Store.Thrift.Exceptions.Exceptions_Types as Exceptions_Types
-import qualified HStream.Store.Thrift.LogTree.Logtree_Types as Logtree_Types
-import qualified HStream.Store.Thrift.Maintenance.Maintenance_Types as Maintenance_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
-import qualified HStream.Store.Thrift.Safety.Safety_Types as Safety_Types
-import qualified HStream.Store.Thrift.Settings.Settings_Types as Settings_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Types as Admin_commands_Types
+import qualified Facebook.Logdevice.Thrift.ClusterMembership.Cluster_membership_Types as Cluster_membership_Types
+import qualified Facebook.Logdevice.Thrift.Exceptions.Exceptions_Types as Exceptions_Types
+import qualified Facebook.Logdevice.Thrift.LogTree.Logtree_Types as Logtree_Types
+import qualified Facebook.Logdevice.Thrift.Maintenance.Maintenance_Types as Maintenance_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Safety.Safety_Types as Safety_Types
+import qualified Facebook.Logdevice.Thrift.Settings.Settings_Types as Settings_Types
 
 
 import qualified Facebook.FB303.FacebookService
-import qualified HStream.Store.Thrift.Admin.Admin_Types
-import qualified HStream.Store.Thrift.Admin.AdminAPI_Iface as Iface
+import qualified Facebook.Logdevice.Thrift.Admin.Admin_Types
+import qualified Facebook.Logdevice.Thrift.Admin.AdminAPI_Iface as Iface
 -- HELPER FUNCTIONS AND STRUCTURES --
 
 -- | Definition of the GetNodesConfig_args struct
@@ -73,12 +73,12 @@ instance Serializable.ThriftSerializable GetNodesConfig_args where
   encode = encode_GetNodesConfig_args
   decode = decode_GetNodesConfig_args
 instance Hashable.Hashable GetNodesConfig_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesConfig_args_filter record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesConfig_args_filter record  
 instance DeepSeq.NFData GetNodesConfig_args where
   rnf _record0 =
     DeepSeq.rnf (getNodesConfig_args_filter _record0) `seq`
     ()
-instance Arbitrary.Arbitrary GetNodesConfig_args where
+instance Arbitrary.Arbitrary GetNodesConfig_args where 
   arbitrary = Monad.liftM GetNodesConfig_args (Arbitrary.arbitrary)
   shrink obj | obj == default_GetNodesConfig_args = []
              | otherwise = Maybe.catMaybes
@@ -125,13 +125,13 @@ instance Serializable.ThriftSerializable GetNodesConfig_result where
   encode = encode_GetNodesConfig_result
   decode = decode_GetNodesConfig_result
 instance Hashable.Hashable GetNodesConfig_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesConfig_result_success record   `Hashable.hashWithSalt` getNodesConfig_result_notready record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesConfig_result_success record   `Hashable.hashWithSalt` getNodesConfig_result_notready record  
 instance DeepSeq.NFData GetNodesConfig_result where
   rnf _record7 =
     DeepSeq.rnf (getNodesConfig_result_success _record7) `seq`
     DeepSeq.rnf (getNodesConfig_result_notready _record7) `seq`
     ()
-instance Arbitrary.Arbitrary GetNodesConfig_result where
+instance Arbitrary.Arbitrary GetNodesConfig_result where 
   arbitrary = Monad.liftM GetNodesConfig_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_GetNodesConfig_result = []
@@ -141,7 +141,7 @@ instance Arbitrary.Arbitrary GetNodesConfig_result where
     ]
 -- | Translate a 'GetNodesConfig_result' to a 'Types.ThriftVal'
 from_GetNodesConfig_result :: GetNodesConfig_result -> Types.ThriftVal
-from_GetNodesConfig_result record = Types.TStruct $ Map.fromList
+from_GetNodesConfig_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v10 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v10))) <$> getNodesConfig_result_notready record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v10 -> Just (0, ("success",Nodes_Types.from_NodesConfigResponse _v10))) $ getNodesConfig_result_success record
@@ -184,12 +184,12 @@ instance Serializable.ThriftSerializable GetNodesState_args where
   encode = encode_GetNodesState_args
   decode = decode_GetNodesState_args
 instance Hashable.Hashable GetNodesState_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesState_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesState_args_request record  
 instance DeepSeq.NFData GetNodesState_args where
   rnf _record15 =
     DeepSeq.rnf (getNodesState_args_request _record15) `seq`
     ()
-instance Arbitrary.Arbitrary GetNodesState_args where
+instance Arbitrary.Arbitrary GetNodesState_args where 
   arbitrary = Monad.liftM GetNodesState_args (Arbitrary.arbitrary)
   shrink obj | obj == default_GetNodesState_args = []
              | otherwise = Maybe.catMaybes
@@ -236,13 +236,13 @@ instance Serializable.ThriftSerializable GetNodesState_result where
   encode = encode_GetNodesState_result
   decode = decode_GetNodesState_result
 instance Hashable.Hashable GetNodesState_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesState_result_success record   `Hashable.hashWithSalt` getNodesState_result_notready record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getNodesState_result_success record   `Hashable.hashWithSalt` getNodesState_result_notready record  
 instance DeepSeq.NFData GetNodesState_result where
   rnf _record22 =
     DeepSeq.rnf (getNodesState_result_success _record22) `seq`
     DeepSeq.rnf (getNodesState_result_notready _record22) `seq`
     ()
-instance Arbitrary.Arbitrary GetNodesState_result where
+instance Arbitrary.Arbitrary GetNodesState_result where 
   arbitrary = Monad.liftM GetNodesState_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_GetNodesState_result = []
@@ -252,7 +252,7 @@ instance Arbitrary.Arbitrary GetNodesState_result where
     ]
 -- | Translate a 'GetNodesState_result' to a 'Types.ThriftVal'
 from_GetNodesState_result :: GetNodesState_result -> Types.ThriftVal
-from_GetNodesState_result record = Types.TStruct $ Map.fromList
+from_GetNodesState_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v25 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v25))) <$> getNodesState_result_notready record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v25 -> Just (0, ("success",Nodes_Types.from_NodesStateResponse _v25))) $ getNodesState_result_success record
@@ -295,12 +295,12 @@ instance Serializable.ThriftSerializable AddNodes_args where
   encode = encode_AddNodes_args
   decode = decode_AddNodes_args
 instance Hashable.Hashable AddNodes_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodes_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodes_args_request record  
 instance DeepSeq.NFData AddNodes_args where
   rnf _record30 =
     DeepSeq.rnf (addNodes_args_request _record30) `seq`
     ()
-instance Arbitrary.Arbitrary AddNodes_args where
+instance Arbitrary.Arbitrary AddNodes_args where 
   arbitrary = Monad.liftM AddNodes_args (Arbitrary.arbitrary)
   shrink obj | obj == default_AddNodes_args = []
              | otherwise = Maybe.catMaybes
@@ -353,7 +353,7 @@ instance Serializable.ThriftSerializable AddNodes_result where
   encode = encode_AddNodes_result
   decode = decode_AddNodes_result
 instance Hashable.Hashable AddNodes_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodes_result_success record   `Hashable.hashWithSalt` addNodes_result_notready record   `Hashable.hashWithSalt` addNodes_result_failed_op record   `Hashable.hashWithSalt` addNodes_result_ncm_error record   `Hashable.hashWithSalt` addNodes_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodes_result_success record   `Hashable.hashWithSalt` addNodes_result_notready record   `Hashable.hashWithSalt` addNodes_result_failed_op record   `Hashable.hashWithSalt` addNodes_result_ncm_error record   `Hashable.hashWithSalt` addNodes_result_not_supported record  
 instance DeepSeq.NFData AddNodes_result where
   rnf _record37 =
     DeepSeq.rnf (addNodes_result_success _record37) `seq`
@@ -362,7 +362,7 @@ instance DeepSeq.NFData AddNodes_result where
     DeepSeq.rnf (addNodes_result_ncm_error _record37) `seq`
     DeepSeq.rnf (addNodes_result_not_supported _record37) `seq`
     ()
-instance Arbitrary.Arbitrary AddNodes_result where
+instance Arbitrary.Arbitrary AddNodes_result where 
   arbitrary = Monad.liftM AddNodes_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -378,7 +378,7 @@ instance Arbitrary.Arbitrary AddNodes_result where
     ]
 -- | Translate a 'AddNodes_result' to a 'Types.ThriftVal'
 from_AddNodes_result :: AddNodes_result -> Types.ThriftVal
-from_AddNodes_result record = Types.TStruct $ Map.fromList
+from_AddNodes_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v40 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v40))) <$> addNodes_result_notready record, (\_v40 -> (2, ("failed_op",Cluster_membership_Types.from_ClusterMembershipOperationFailed _v40))) <$> addNodes_result_failed_op record, (\_v40 -> (3, ("ncm_error",Exceptions_Types.from_NodesConfigurationManagerError _v40))) <$> addNodes_result_ncm_error record, (\_v40 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v40))) <$> addNodes_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v40 -> Just (0, ("success",Cluster_membership_Types.from_AddNodesResponse _v40))) $ addNodes_result_success record
@@ -430,12 +430,12 @@ instance Serializable.ThriftSerializable UpdateNodes_args where
   encode = encode_UpdateNodes_args
   decode = decode_UpdateNodes_args
 instance Hashable.Hashable UpdateNodes_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodes_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodes_args_request record  
 instance DeepSeq.NFData UpdateNodes_args where
   rnf _record48 =
     DeepSeq.rnf (updateNodes_args_request _record48) `seq`
     ()
-instance Arbitrary.Arbitrary UpdateNodes_args where
+instance Arbitrary.Arbitrary UpdateNodes_args where 
   arbitrary = Monad.liftM UpdateNodes_args (Arbitrary.arbitrary)
   shrink obj | obj == default_UpdateNodes_args = []
              | otherwise = Maybe.catMaybes
@@ -488,7 +488,7 @@ instance Serializable.ThriftSerializable UpdateNodes_result where
   encode = encode_UpdateNodes_result
   decode = decode_UpdateNodes_result
 instance Hashable.Hashable UpdateNodes_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodes_result_success record   `Hashable.hashWithSalt` updateNodes_result_notready record   `Hashable.hashWithSalt` updateNodes_result_failed_op record   `Hashable.hashWithSalt` updateNodes_result_ncm_error record   `Hashable.hashWithSalt` updateNodes_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodes_result_success record   `Hashable.hashWithSalt` updateNodes_result_notready record   `Hashable.hashWithSalt` updateNodes_result_failed_op record   `Hashable.hashWithSalt` updateNodes_result_ncm_error record   `Hashable.hashWithSalt` updateNodes_result_not_supported record  
 instance DeepSeq.NFData UpdateNodes_result where
   rnf _record55 =
     DeepSeq.rnf (updateNodes_result_success _record55) `seq`
@@ -497,7 +497,7 @@ instance DeepSeq.NFData UpdateNodes_result where
     DeepSeq.rnf (updateNodes_result_ncm_error _record55) `seq`
     DeepSeq.rnf (updateNodes_result_not_supported _record55) `seq`
     ()
-instance Arbitrary.Arbitrary UpdateNodes_result where
+instance Arbitrary.Arbitrary UpdateNodes_result where 
   arbitrary = Monad.liftM UpdateNodes_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -513,7 +513,7 @@ instance Arbitrary.Arbitrary UpdateNodes_result where
     ]
 -- | Translate a 'UpdateNodes_result' to a 'Types.ThriftVal'
 from_UpdateNodes_result :: UpdateNodes_result -> Types.ThriftVal
-from_UpdateNodes_result record = Types.TStruct $ Map.fromList
+from_UpdateNodes_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v58 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v58))) <$> updateNodes_result_notready record, (\_v58 -> (2, ("failed_op",Cluster_membership_Types.from_ClusterMembershipOperationFailed _v58))) <$> updateNodes_result_failed_op record, (\_v58 -> (3, ("ncm_error",Exceptions_Types.from_NodesConfigurationManagerError _v58))) <$> updateNodes_result_ncm_error record, (\_v58 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v58))) <$> updateNodes_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v58 -> Just (0, ("success",Cluster_membership_Types.from_UpdateNodesResponse _v58))) $ updateNodes_result_success record
@@ -565,12 +565,12 @@ instance Serializable.ThriftSerializable RemoveNodes_args where
   encode = encode_RemoveNodes_args
   decode = decode_RemoveNodes_args
 instance Hashable.Hashable RemoveNodes_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodes_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodes_args_request record  
 instance DeepSeq.NFData RemoveNodes_args where
   rnf _record66 =
     DeepSeq.rnf (removeNodes_args_request _record66) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveNodes_args where
+instance Arbitrary.Arbitrary RemoveNodes_args where 
   arbitrary = Monad.liftM RemoveNodes_args (Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveNodes_args = []
              | otherwise = Maybe.catMaybes
@@ -623,7 +623,7 @@ instance Serializable.ThriftSerializable RemoveNodes_result where
   encode = encode_RemoveNodes_result
   decode = decode_RemoveNodes_result
 instance Hashable.Hashable RemoveNodes_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodes_result_success record   `Hashable.hashWithSalt` removeNodes_result_notready record   `Hashable.hashWithSalt` removeNodes_result_failed_op record   `Hashable.hashWithSalt` removeNodes_result_ncm_error record   `Hashable.hashWithSalt` removeNodes_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodes_result_success record   `Hashable.hashWithSalt` removeNodes_result_notready record   `Hashable.hashWithSalt` removeNodes_result_failed_op record   `Hashable.hashWithSalt` removeNodes_result_ncm_error record   `Hashable.hashWithSalt` removeNodes_result_not_supported record  
 instance DeepSeq.NFData RemoveNodes_result where
   rnf _record73 =
     DeepSeq.rnf (removeNodes_result_success _record73) `seq`
@@ -632,7 +632,7 @@ instance DeepSeq.NFData RemoveNodes_result where
     DeepSeq.rnf (removeNodes_result_ncm_error _record73) `seq`
     DeepSeq.rnf (removeNodes_result_not_supported _record73) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveNodes_result where
+instance Arbitrary.Arbitrary RemoveNodes_result where 
   arbitrary = Monad.liftM RemoveNodes_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -648,7 +648,7 @@ instance Arbitrary.Arbitrary RemoveNodes_result where
     ]
 -- | Translate a 'RemoveNodes_result' to a 'Types.ThriftVal'
 from_RemoveNodes_result :: RemoveNodes_result -> Types.ThriftVal
-from_RemoveNodes_result record = Types.TStruct $ Map.fromList
+from_RemoveNodes_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v76 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v76))) <$> removeNodes_result_notready record, (\_v76 -> (2, ("failed_op",Cluster_membership_Types.from_ClusterMembershipOperationFailed _v76))) <$> removeNodes_result_failed_op record, (\_v76 -> (3, ("ncm_error",Exceptions_Types.from_NodesConfigurationManagerError _v76))) <$> removeNodes_result_ncm_error record, (\_v76 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v76))) <$> removeNodes_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v76 -> Just (0, ("success",Cluster_membership_Types.from_RemoveNodesResponse _v76))) $ removeNodes_result_success record
@@ -700,12 +700,12 @@ instance Serializable.ThriftSerializable MarkShardsAsProvisioned_args where
   encode = encode_MarkShardsAsProvisioned_args
   decode = decode_MarkShardsAsProvisioned_args
 instance Hashable.Hashable MarkShardsAsProvisioned_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisioned_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisioned_args_request record  
 instance DeepSeq.NFData MarkShardsAsProvisioned_args where
   rnf _record84 =
     DeepSeq.rnf (markShardsAsProvisioned_args_request _record84) `seq`
     ()
-instance Arbitrary.Arbitrary MarkShardsAsProvisioned_args where
+instance Arbitrary.Arbitrary MarkShardsAsProvisioned_args where 
   arbitrary = Monad.liftM MarkShardsAsProvisioned_args (Arbitrary.arbitrary)
   shrink obj | obj == default_MarkShardsAsProvisioned_args = []
              | otherwise = Maybe.catMaybes
@@ -758,7 +758,7 @@ instance Serializable.ThriftSerializable MarkShardsAsProvisioned_result where
   encode = encode_MarkShardsAsProvisioned_result
   decode = decode_MarkShardsAsProvisioned_result
 instance Hashable.Hashable MarkShardsAsProvisioned_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisioned_result_success record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_notready record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_invalid_request record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_ncm_error record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisioned_result_success record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_notready record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_invalid_request record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_ncm_error record   `Hashable.hashWithSalt` markShardsAsProvisioned_result_not_supported record  
 instance DeepSeq.NFData MarkShardsAsProvisioned_result where
   rnf _record91 =
     DeepSeq.rnf (markShardsAsProvisioned_result_success _record91) `seq`
@@ -767,7 +767,7 @@ instance DeepSeq.NFData MarkShardsAsProvisioned_result where
     DeepSeq.rnf (markShardsAsProvisioned_result_ncm_error _record91) `seq`
     DeepSeq.rnf (markShardsAsProvisioned_result_not_supported _record91) `seq`
     ()
-instance Arbitrary.Arbitrary MarkShardsAsProvisioned_result where
+instance Arbitrary.Arbitrary MarkShardsAsProvisioned_result where 
   arbitrary = Monad.liftM MarkShardsAsProvisioned_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -783,7 +783,7 @@ instance Arbitrary.Arbitrary MarkShardsAsProvisioned_result where
     ]
 -- | Translate a 'MarkShardsAsProvisioned_result' to a 'Types.ThriftVal'
 from_MarkShardsAsProvisioned_result :: MarkShardsAsProvisioned_result -> Types.ThriftVal
-from_MarkShardsAsProvisioned_result record = Types.TStruct $ Map.fromList
+from_MarkShardsAsProvisioned_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v94 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v94))) <$> markShardsAsProvisioned_result_notready record, (\_v94 -> (2, ("invalid_request",Exceptions_Types.from_InvalidRequest _v94))) <$> markShardsAsProvisioned_result_invalid_request record, (\_v94 -> (3, ("ncm_error",Exceptions_Types.from_NodesConfigurationManagerError _v94))) <$> markShardsAsProvisioned_result_ncm_error record, (\_v94 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v94))) <$> markShardsAsProvisioned_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v94 -> Just (0, ("success",Cluster_membership_Types.from_MarkShardsAsProvisionedResponse _v94))) $ markShardsAsProvisioned_result_success record
@@ -835,12 +835,12 @@ instance Serializable.ThriftSerializable BumpNodeGeneration_args where
   encode = encode_BumpNodeGeneration_args
   decode = decode_BumpNodeGeneration_args
 instance Hashable.Hashable BumpNodeGeneration_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpNodeGeneration_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpNodeGeneration_args_request record  
 instance DeepSeq.NFData BumpNodeGeneration_args where
   rnf _record102 =
     DeepSeq.rnf (bumpNodeGeneration_args_request _record102) `seq`
     ()
-instance Arbitrary.Arbitrary BumpNodeGeneration_args where
+instance Arbitrary.Arbitrary BumpNodeGeneration_args where 
   arbitrary = Monad.liftM BumpNodeGeneration_args (Arbitrary.arbitrary)
   shrink obj | obj == default_BumpNodeGeneration_args = []
              | otherwise = Maybe.catMaybes
@@ -893,7 +893,7 @@ instance Serializable.ThriftSerializable BumpNodeGeneration_result where
   encode = encode_BumpNodeGeneration_result
   decode = decode_BumpNodeGeneration_result
 instance Hashable.Hashable BumpNodeGeneration_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpNodeGeneration_result_success record   `Hashable.hashWithSalt` bumpNodeGeneration_result_notready record   `Hashable.hashWithSalt` bumpNodeGeneration_result_invalid_request record   `Hashable.hashWithSalt` bumpNodeGeneration_result_ncm_error record   `Hashable.hashWithSalt` bumpNodeGeneration_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpNodeGeneration_result_success record   `Hashable.hashWithSalt` bumpNodeGeneration_result_notready record   `Hashable.hashWithSalt` bumpNodeGeneration_result_invalid_request record   `Hashable.hashWithSalt` bumpNodeGeneration_result_ncm_error record   `Hashable.hashWithSalt` bumpNodeGeneration_result_not_supported record  
 instance DeepSeq.NFData BumpNodeGeneration_result where
   rnf _record109 =
     DeepSeq.rnf (bumpNodeGeneration_result_success _record109) `seq`
@@ -902,7 +902,7 @@ instance DeepSeq.NFData BumpNodeGeneration_result where
     DeepSeq.rnf (bumpNodeGeneration_result_ncm_error _record109) `seq`
     DeepSeq.rnf (bumpNodeGeneration_result_not_supported _record109) `seq`
     ()
-instance Arbitrary.Arbitrary BumpNodeGeneration_result where
+instance Arbitrary.Arbitrary BumpNodeGeneration_result where 
   arbitrary = Monad.liftM BumpNodeGeneration_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -918,7 +918,7 @@ instance Arbitrary.Arbitrary BumpNodeGeneration_result where
     ]
 -- | Translate a 'BumpNodeGeneration_result' to a 'Types.ThriftVal'
 from_BumpNodeGeneration_result :: BumpNodeGeneration_result -> Types.ThriftVal
-from_BumpNodeGeneration_result record = Types.TStruct $ Map.fromList
+from_BumpNodeGeneration_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v112 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v112))) <$> bumpNodeGeneration_result_notready record, (\_v112 -> (2, ("invalid_request",Exceptions_Types.from_InvalidRequest _v112))) <$> bumpNodeGeneration_result_invalid_request record, (\_v112 -> (3, ("ncm_error",Exceptions_Types.from_NodesConfigurationManagerError _v112))) <$> bumpNodeGeneration_result_ncm_error record, (\_v112 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v112))) <$> bumpNodeGeneration_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v112 -> Just (0, ("success",Cluster_membership_Types.from_BumpGenerationResponse _v112))) $ bumpNodeGeneration_result_success record
@@ -970,12 +970,12 @@ instance Serializable.ThriftSerializable BootstrapCluster_args where
   encode = encode_BootstrapCluster_args
   decode = decode_BootstrapCluster_args
 instance Hashable.Hashable BootstrapCluster_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapCluster_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapCluster_args_request record  
 instance DeepSeq.NFData BootstrapCluster_args where
   rnf _record120 =
     DeepSeq.rnf (bootstrapCluster_args_request _record120) `seq`
     ()
-instance Arbitrary.Arbitrary BootstrapCluster_args where
+instance Arbitrary.Arbitrary BootstrapCluster_args where 
   arbitrary = Monad.liftM BootstrapCluster_args (Arbitrary.arbitrary)
   shrink obj | obj == default_BootstrapCluster_args = []
              | otherwise = Maybe.catMaybes
@@ -1024,14 +1024,14 @@ instance Serializable.ThriftSerializable BootstrapCluster_result where
   encode = encode_BootstrapCluster_result
   decode = decode_BootstrapCluster_result
 instance Hashable.Hashable BootstrapCluster_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapCluster_result_success record   `Hashable.hashWithSalt` bootstrapCluster_result_error record   `Hashable.hashWithSalt` bootstrapCluster_result_ncm_error record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapCluster_result_success record   `Hashable.hashWithSalt` bootstrapCluster_result_error record   `Hashable.hashWithSalt` bootstrapCluster_result_ncm_error record  
 instance DeepSeq.NFData BootstrapCluster_result where
   rnf _record127 =
     DeepSeq.rnf (bootstrapCluster_result_success _record127) `seq`
     DeepSeq.rnf (bootstrapCluster_result_error _record127) `seq`
     DeepSeq.rnf (bootstrapCluster_result_ncm_error _record127) `seq`
     ()
-instance Arbitrary.Arbitrary BootstrapCluster_result where
+instance Arbitrary.Arbitrary BootstrapCluster_result where 
   arbitrary = Monad.liftM BootstrapCluster_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1043,7 +1043,7 @@ instance Arbitrary.Arbitrary BootstrapCluster_result where
     ]
 -- | Translate a 'BootstrapCluster_result' to a 'Types.ThriftVal'
 from_BootstrapCluster_result :: BootstrapCluster_result -> Types.ThriftVal
-from_BootstrapCluster_result record = Types.TStruct $ Map.fromList
+from_BootstrapCluster_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v130 -> (1, ("error",Exceptions_Types.from_OperationError _v130))) <$> bootstrapCluster_result_error record, (\_v130 -> (2, ("ncm_error",Exceptions_Types.from_NodesConfigurationManagerError _v130))) <$> bootstrapCluster_result_ncm_error record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v130 -> Just (0, ("success",Cluster_membership_Types.from_BootstrapClusterResponse _v130))) $ bootstrapCluster_result_success record
@@ -1089,12 +1089,12 @@ instance Serializable.ThriftSerializable GetMaintenances_args where
   encode = encode_GetMaintenances_args
   decode = decode_GetMaintenances_args
 instance Hashable.Hashable GetMaintenances_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getMaintenances_args_filter record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getMaintenances_args_filter record  
 instance DeepSeq.NFData GetMaintenances_args where
   rnf _record136 =
     DeepSeq.rnf (getMaintenances_args_filter _record136) `seq`
     ()
-instance Arbitrary.Arbitrary GetMaintenances_args where
+instance Arbitrary.Arbitrary GetMaintenances_args where 
   arbitrary = Monad.liftM GetMaintenances_args (Arbitrary.arbitrary)
   shrink obj | obj == default_GetMaintenances_args = []
              | otherwise = Maybe.catMaybes
@@ -1147,7 +1147,7 @@ instance Serializable.ThriftSerializable GetMaintenances_result where
   encode = encode_GetMaintenances_result
   decode = decode_GetMaintenances_result
 instance Hashable.Hashable GetMaintenances_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getMaintenances_result_success record   `Hashable.hashWithSalt` getMaintenances_result_notready record   `Hashable.hashWithSalt` getMaintenances_result_invalid_request record   `Hashable.hashWithSalt` getMaintenances_result_error record   `Hashable.hashWithSalt` getMaintenances_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getMaintenances_result_success record   `Hashable.hashWithSalt` getMaintenances_result_notready record   `Hashable.hashWithSalt` getMaintenances_result_invalid_request record   `Hashable.hashWithSalt` getMaintenances_result_error record   `Hashable.hashWithSalt` getMaintenances_result_not_supported record  
 instance DeepSeq.NFData GetMaintenances_result where
   rnf _record143 =
     DeepSeq.rnf (getMaintenances_result_success _record143) `seq`
@@ -1156,7 +1156,7 @@ instance DeepSeq.NFData GetMaintenances_result where
     DeepSeq.rnf (getMaintenances_result_error _record143) `seq`
     DeepSeq.rnf (getMaintenances_result_not_supported _record143) `seq`
     ()
-instance Arbitrary.Arbitrary GetMaintenances_result where
+instance Arbitrary.Arbitrary GetMaintenances_result where 
   arbitrary = Monad.liftM GetMaintenances_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1172,7 +1172,7 @@ instance Arbitrary.Arbitrary GetMaintenances_result where
     ]
 -- | Translate a 'GetMaintenances_result' to a 'Types.ThriftVal'
 from_GetMaintenances_result :: GetMaintenances_result -> Types.ThriftVal
-from_GetMaintenances_result record = Types.TStruct $ Map.fromList
+from_GetMaintenances_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v146 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v146))) <$> getMaintenances_result_notready record, (\_v146 -> (3, ("invalid_request",Exceptions_Types.from_InvalidRequest _v146))) <$> getMaintenances_result_invalid_request record, (\_v146 -> (4, ("error",Exceptions_Types.from_OperationError _v146))) <$> getMaintenances_result_error record, (\_v146 -> (5, ("not_supported",Exceptions_Types.from_NotSupported _v146))) <$> getMaintenances_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v146 -> Just (0, ("success",Maintenance_Types.from_MaintenanceDefinitionResponse _v146))) $ getMaintenances_result_success record
@@ -1224,12 +1224,12 @@ instance Serializable.ThriftSerializable ApplyMaintenance_args where
   encode = encode_ApplyMaintenance_args
   decode = decode_ApplyMaintenance_args
 instance Hashable.Hashable ApplyMaintenance_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applyMaintenance_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applyMaintenance_args_request record  
 instance DeepSeq.NFData ApplyMaintenance_args where
   rnf _record154 =
     DeepSeq.rnf (applyMaintenance_args_request _record154) `seq`
     ()
-instance Arbitrary.Arbitrary ApplyMaintenance_args where
+instance Arbitrary.Arbitrary ApplyMaintenance_args where 
   arbitrary = Monad.liftM ApplyMaintenance_args (Arbitrary.arbitrary)
   shrink obj | obj == default_ApplyMaintenance_args = []
              | otherwise = Maybe.catMaybes
@@ -1284,7 +1284,7 @@ instance Serializable.ThriftSerializable ApplyMaintenance_result where
   encode = encode_ApplyMaintenance_result
   decode = decode_ApplyMaintenance_result
 instance Hashable.Hashable ApplyMaintenance_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applyMaintenance_result_success record   `Hashable.hashWithSalt` applyMaintenance_result_notready record   `Hashable.hashWithSalt` applyMaintenance_result_invalid_request record   `Hashable.hashWithSalt` applyMaintenance_result_clash record   `Hashable.hashWithSalt` applyMaintenance_result_operation_error record   `Hashable.hashWithSalt` applyMaintenance_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applyMaintenance_result_success record   `Hashable.hashWithSalt` applyMaintenance_result_notready record   `Hashable.hashWithSalt` applyMaintenance_result_invalid_request record   `Hashable.hashWithSalt` applyMaintenance_result_clash record   `Hashable.hashWithSalt` applyMaintenance_result_operation_error record   `Hashable.hashWithSalt` applyMaintenance_result_not_supported record  
 instance DeepSeq.NFData ApplyMaintenance_result where
   rnf _record161 =
     DeepSeq.rnf (applyMaintenance_result_success _record161) `seq`
@@ -1294,7 +1294,7 @@ instance DeepSeq.NFData ApplyMaintenance_result where
     DeepSeq.rnf (applyMaintenance_result_operation_error _record161) `seq`
     DeepSeq.rnf (applyMaintenance_result_not_supported _record161) `seq`
     ()
-instance Arbitrary.Arbitrary ApplyMaintenance_result where
+instance Arbitrary.Arbitrary ApplyMaintenance_result where 
   arbitrary = Monad.liftM ApplyMaintenance_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1312,7 +1312,7 @@ instance Arbitrary.Arbitrary ApplyMaintenance_result where
     ]
 -- | Translate a 'ApplyMaintenance_result' to a 'Types.ThriftVal'
 from_ApplyMaintenance_result :: ApplyMaintenance_result -> Types.ThriftVal
-from_ApplyMaintenance_result record = Types.TStruct $ Map.fromList
+from_ApplyMaintenance_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v164 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v164))) <$> applyMaintenance_result_notready record, (\_v164 -> (2, ("invalid_request",Exceptions_Types.from_InvalidRequest _v164))) <$> applyMaintenance_result_invalid_request record, (\_v164 -> (3, ("clash",Exceptions_Types.from_MaintenanceClash _v164))) <$> applyMaintenance_result_clash record, (\_v164 -> (4, ("operation_error",Exceptions_Types.from_OperationError _v164))) <$> applyMaintenance_result_operation_error record, (\_v164 -> (5, ("not_supported",Exceptions_Types.from_NotSupported _v164))) <$> applyMaintenance_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v164 -> Just (0, ("success",Maintenance_Types.from_MaintenanceDefinitionResponse _v164))) $ applyMaintenance_result_success record
@@ -1367,12 +1367,12 @@ instance Serializable.ThriftSerializable RemoveMaintenances_args where
   encode = encode_RemoveMaintenances_args
   decode = decode_RemoveMaintenances_args
 instance Hashable.Hashable RemoveMaintenances_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenances_args_filter record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenances_args_filter record  
 instance DeepSeq.NFData RemoveMaintenances_args where
   rnf _record173 =
     DeepSeq.rnf (removeMaintenances_args_filter _record173) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveMaintenances_args where
+instance Arbitrary.Arbitrary RemoveMaintenances_args where 
   arbitrary = Monad.liftM RemoveMaintenances_args (Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveMaintenances_args = []
              | otherwise = Maybe.catMaybes
@@ -1427,7 +1427,7 @@ instance Serializable.ThriftSerializable RemoveMaintenances_result where
   encode = encode_RemoveMaintenances_result
   decode = decode_RemoveMaintenances_result
 instance Hashable.Hashable RemoveMaintenances_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenances_result_success record   `Hashable.hashWithSalt` removeMaintenances_result_notready record   `Hashable.hashWithSalt` removeMaintenances_result_invalid_request record   `Hashable.hashWithSalt` removeMaintenances_result_operation_error record   `Hashable.hashWithSalt` removeMaintenances_result_not_supported record   `Hashable.hashWithSalt` removeMaintenances_result_not_found record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenances_result_success record   `Hashable.hashWithSalt` removeMaintenances_result_notready record   `Hashable.hashWithSalt` removeMaintenances_result_invalid_request record   `Hashable.hashWithSalt` removeMaintenances_result_operation_error record   `Hashable.hashWithSalt` removeMaintenances_result_not_supported record   `Hashable.hashWithSalt` removeMaintenances_result_not_found record  
 instance DeepSeq.NFData RemoveMaintenances_result where
   rnf _record180 =
     DeepSeq.rnf (removeMaintenances_result_success _record180) `seq`
@@ -1437,7 +1437,7 @@ instance DeepSeq.NFData RemoveMaintenances_result where
     DeepSeq.rnf (removeMaintenances_result_not_supported _record180) `seq`
     DeepSeq.rnf (removeMaintenances_result_not_found _record180) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveMaintenances_result where
+instance Arbitrary.Arbitrary RemoveMaintenances_result where 
   arbitrary = Monad.liftM RemoveMaintenances_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1455,7 +1455,7 @@ instance Arbitrary.Arbitrary RemoveMaintenances_result where
     ]
 -- | Translate a 'RemoveMaintenances_result' to a 'Types.ThriftVal'
 from_RemoveMaintenances_result :: RemoveMaintenances_result -> Types.ThriftVal
-from_RemoveMaintenances_result record = Types.TStruct $ Map.fromList
+from_RemoveMaintenances_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v183 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v183))) <$> removeMaintenances_result_notready record, (\_v183 -> (2, ("invalid_request",Exceptions_Types.from_InvalidRequest _v183))) <$> removeMaintenances_result_invalid_request record, (\_v183 -> (3, ("operation_error",Exceptions_Types.from_OperationError _v183))) <$> removeMaintenances_result_operation_error record, (\_v183 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v183))) <$> removeMaintenances_result_not_supported record, (\_v183 -> (5, ("not_found",Exceptions_Types.from_MaintenanceMatchError _v183))) <$> removeMaintenances_result_not_found record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v183 -> Just (0, ("success",Maintenance_Types.from_RemoveMaintenancesResponse _v183))) $ removeMaintenances_result_success record
@@ -1510,12 +1510,12 @@ instance Serializable.ThriftSerializable MarkAllShardsUnrecoverable_args where
   encode = encode_MarkAllShardsUnrecoverable_args
   decode = decode_MarkAllShardsUnrecoverable_args
 instance Hashable.Hashable MarkAllShardsUnrecoverable_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverable_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverable_args_request record  
 instance DeepSeq.NFData MarkAllShardsUnrecoverable_args where
   rnf _record192 =
     DeepSeq.rnf (markAllShardsUnrecoverable_args_request _record192) `seq`
     ()
-instance Arbitrary.Arbitrary MarkAllShardsUnrecoverable_args where
+instance Arbitrary.Arbitrary MarkAllShardsUnrecoverable_args where 
   arbitrary = Monad.liftM MarkAllShardsUnrecoverable_args (Arbitrary.arbitrary)
   shrink obj | obj == default_MarkAllShardsUnrecoverable_args = []
              | otherwise = Maybe.catMaybes
@@ -1568,7 +1568,7 @@ instance Serializable.ThriftSerializable MarkAllShardsUnrecoverable_result where
   encode = encode_MarkAllShardsUnrecoverable_result
   decode = decode_MarkAllShardsUnrecoverable_result
 instance Hashable.Hashable MarkAllShardsUnrecoverable_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_success record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_notready record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_invalid_request record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_operation_error record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_not_supported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_success record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_notready record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_invalid_request record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_operation_error record   `Hashable.hashWithSalt` markAllShardsUnrecoverable_result_not_supported record  
 instance DeepSeq.NFData MarkAllShardsUnrecoverable_result where
   rnf _record199 =
     DeepSeq.rnf (markAllShardsUnrecoverable_result_success _record199) `seq`
@@ -1577,7 +1577,7 @@ instance DeepSeq.NFData MarkAllShardsUnrecoverable_result where
     DeepSeq.rnf (markAllShardsUnrecoverable_result_operation_error _record199) `seq`
     DeepSeq.rnf (markAllShardsUnrecoverable_result_not_supported _record199) `seq`
     ()
-instance Arbitrary.Arbitrary MarkAllShardsUnrecoverable_result where
+instance Arbitrary.Arbitrary MarkAllShardsUnrecoverable_result where 
   arbitrary = Monad.liftM MarkAllShardsUnrecoverable_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1593,7 +1593,7 @@ instance Arbitrary.Arbitrary MarkAllShardsUnrecoverable_result where
     ]
 -- | Translate a 'MarkAllShardsUnrecoverable_result' to a 'Types.ThriftVal'
 from_MarkAllShardsUnrecoverable_result :: MarkAllShardsUnrecoverable_result -> Types.ThriftVal
-from_MarkAllShardsUnrecoverable_result record = Types.TStruct $ Map.fromList
+from_MarkAllShardsUnrecoverable_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v202 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v202))) <$> markAllShardsUnrecoverable_result_notready record, (\_v202 -> (2, ("invalid_request",Exceptions_Types.from_InvalidRequest _v202))) <$> markAllShardsUnrecoverable_result_invalid_request record, (\_v202 -> (3, ("operation_error",Exceptions_Types.from_OperationError _v202))) <$> markAllShardsUnrecoverable_result_operation_error record, (\_v202 -> (4, ("not_supported",Exceptions_Types.from_NotSupported _v202))) <$> markAllShardsUnrecoverable_result_not_supported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v202 -> Just (0, ("success",Maintenance_Types.from_MarkAllShardsUnrecoverableResponse _v202))) $ markAllShardsUnrecoverable_result_success record
@@ -1645,12 +1645,12 @@ instance Serializable.ThriftSerializable CheckImpact_args where
   encode = encode_CheckImpact_args
   decode = decode_CheckImpact_args
 instance Hashable.Hashable CheckImpact_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpact_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpact_args_request record  
 instance DeepSeq.NFData CheckImpact_args where
   rnf _record210 =
     DeepSeq.rnf (checkImpact_args_request _record210) `seq`
     ()
-instance Arbitrary.Arbitrary CheckImpact_args where
+instance Arbitrary.Arbitrary CheckImpact_args where 
   arbitrary = Monad.liftM CheckImpact_args (Arbitrary.arbitrary)
   shrink obj | obj == default_CheckImpact_args = []
              | otherwise = Maybe.catMaybes
@@ -1703,7 +1703,7 @@ instance Serializable.ThriftSerializable CheckImpact_result where
   encode = encode_CheckImpact_result
   decode = decode_CheckImpact_result
 instance Hashable.Hashable CheckImpact_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpact_result_success record   `Hashable.hashWithSalt` checkImpact_result_notready record   `Hashable.hashWithSalt` checkImpact_result_error record   `Hashable.hashWithSalt` checkImpact_result_invalid_request record   `Hashable.hashWithSalt` checkImpact_result_notsupported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` checkImpact_result_success record   `Hashable.hashWithSalt` checkImpact_result_notready record   `Hashable.hashWithSalt` checkImpact_result_error record   `Hashable.hashWithSalt` checkImpact_result_invalid_request record   `Hashable.hashWithSalt` checkImpact_result_notsupported record  
 instance DeepSeq.NFData CheckImpact_result where
   rnf _record217 =
     DeepSeq.rnf (checkImpact_result_success _record217) `seq`
@@ -1712,7 +1712,7 @@ instance DeepSeq.NFData CheckImpact_result where
     DeepSeq.rnf (checkImpact_result_invalid_request _record217) `seq`
     DeepSeq.rnf (checkImpact_result_notsupported _record217) `seq`
     ()
-instance Arbitrary.Arbitrary CheckImpact_result where
+instance Arbitrary.Arbitrary CheckImpact_result where 
   arbitrary = Monad.liftM CheckImpact_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -1728,7 +1728,7 @@ instance Arbitrary.Arbitrary CheckImpact_result where
     ]
 -- | Translate a 'CheckImpact_result' to a 'Types.ThriftVal'
 from_CheckImpact_result :: CheckImpact_result -> Types.ThriftVal
-from_CheckImpact_result record = Types.TStruct $ Map.fromList
+from_CheckImpact_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v220 -> (1, ("notready",Exceptions_Types.from_NodeNotReady _v220))) <$> checkImpact_result_notready record, (\_v220 -> (2, ("error",Exceptions_Types.from_OperationError _v220))) <$> checkImpact_result_error record, (\_v220 -> (3, ("invalid_request",Exceptions_Types.from_InvalidRequest _v220))) <$> checkImpact_result_invalid_request record, (\_v220 -> (4, ("notsupported",Exceptions_Types.from_NotSupported _v220))) <$> checkImpact_result_notsupported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v220 -> Just (0, ("success",Safety_Types.from_CheckImpactResponse _v220))) $ checkImpact_result_success record
@@ -1778,11 +1778,11 @@ instance Serializable.ThriftSerializable GetLogTreeInfo_args where
   encode = encode_GetLogTreeInfo_args
   decode = decode_GetLogTreeInfo_args
 instance Hashable.Hashable GetLogTreeInfo_args where
-  hashWithSalt salt record = salt
+  hashWithSalt salt record = salt  
 instance DeepSeq.NFData GetLogTreeInfo_args where
   rnf _record228 =
     ()
-instance Arbitrary.Arbitrary GetLogTreeInfo_args where
+instance Arbitrary.Arbitrary GetLogTreeInfo_args where 
   arbitrary = QuickCheck.elements [GetLogTreeInfo_args]
 -- | Translate a 'GetLogTreeInfo_args' to a 'Types.ThriftVal'
 from_GetLogTreeInfo_args :: GetLogTreeInfo_args -> Types.ThriftVal
@@ -1822,12 +1822,12 @@ instance Serializable.ThriftSerializable GetLogTreeInfo_result where
   encode = encode_GetLogTreeInfo_result
   decode = decode_GetLogTreeInfo_result
 instance Hashable.Hashable GetLogTreeInfo_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogTreeInfo_result_success record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogTreeInfo_result_success record  
 instance DeepSeq.NFData GetLogTreeInfo_result where
   rnf _record234 =
     DeepSeq.rnf (getLogTreeInfo_result_success _record234) `seq`
     ()
-instance Arbitrary.Arbitrary GetLogTreeInfo_result where
+instance Arbitrary.Arbitrary GetLogTreeInfo_result where 
   arbitrary = Monad.liftM GetLogTreeInfo_result (Arbitrary.arbitrary)
   shrink obj | obj == default_GetLogTreeInfo_result = []
              | otherwise = Maybe.catMaybes
@@ -1870,11 +1870,11 @@ instance Serializable.ThriftSerializable GetReplicationInfo_args where
   encode = encode_GetReplicationInfo_args
   decode = decode_GetReplicationInfo_args
 instance Hashable.Hashable GetReplicationInfo_args where
-  hashWithSalt salt record = salt
+  hashWithSalt salt record = salt  
 instance DeepSeq.NFData GetReplicationInfo_args where
   rnf _record241 =
     ()
-instance Arbitrary.Arbitrary GetReplicationInfo_args where
+instance Arbitrary.Arbitrary GetReplicationInfo_args where 
   arbitrary = QuickCheck.elements [GetReplicationInfo_args]
 -- | Translate a 'GetReplicationInfo_args' to a 'Types.ThriftVal'
 from_GetReplicationInfo_args :: GetReplicationInfo_args -> Types.ThriftVal
@@ -1914,12 +1914,12 @@ instance Serializable.ThriftSerializable GetReplicationInfo_result where
   encode = encode_GetReplicationInfo_result
   decode = decode_GetReplicationInfo_result
 instance Hashable.Hashable GetReplicationInfo_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getReplicationInfo_result_success record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getReplicationInfo_result_success record  
 instance DeepSeq.NFData GetReplicationInfo_result where
   rnf _record247 =
     DeepSeq.rnf (getReplicationInfo_result_success _record247) `seq`
     ()
-instance Arbitrary.Arbitrary GetReplicationInfo_result where
+instance Arbitrary.Arbitrary GetReplicationInfo_result where 
   arbitrary = Monad.liftM GetReplicationInfo_result (Arbitrary.arbitrary)
   shrink obj | obj == default_GetReplicationInfo_result = []
              | otherwise = Maybe.catMaybes
@@ -1964,12 +1964,12 @@ instance Serializable.ThriftSerializable GetSettings_args where
   encode = encode_GetSettings_args
   decode = decode_GetSettings_args
 instance Hashable.Hashable GetSettings_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getSettings_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getSettings_args_request record  
 instance DeepSeq.NFData GetSettings_args where
   rnf _record254 =
     DeepSeq.rnf (getSettings_args_request _record254) `seq`
     ()
-instance Arbitrary.Arbitrary GetSettings_args where
+instance Arbitrary.Arbitrary GetSettings_args where 
   arbitrary = Monad.liftM GetSettings_args (Arbitrary.arbitrary)
   shrink obj | obj == default_GetSettings_args = []
              | otherwise = Maybe.catMaybes
@@ -2014,12 +2014,12 @@ instance Serializable.ThriftSerializable GetSettings_result where
   encode = encode_GetSettings_result
   decode = decode_GetSettings_result
 instance Hashable.Hashable GetSettings_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getSettings_result_success record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getSettings_result_success record  
 instance DeepSeq.NFData GetSettings_result where
   rnf _record261 =
     DeepSeq.rnf (getSettings_result_success _record261) `seq`
     ()
-instance Arbitrary.Arbitrary GetSettings_result where
+instance Arbitrary.Arbitrary GetSettings_result where 
   arbitrary = Monad.liftM GetSettings_result (Arbitrary.arbitrary)
   shrink obj | obj == default_GetSettings_result = []
              | otherwise = Maybe.catMaybes
@@ -2064,12 +2064,12 @@ instance Serializable.ThriftSerializable ApplySettingOverride_args where
   encode = encode_ApplySettingOverride_args
   decode = decode_ApplySettingOverride_args
 instance Hashable.Hashable ApplySettingOverride_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applySettingOverride_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applySettingOverride_args_request record  
 instance DeepSeq.NFData ApplySettingOverride_args where
   rnf _record268 =
     DeepSeq.rnf (applySettingOverride_args_request _record268) `seq`
     ()
-instance Arbitrary.Arbitrary ApplySettingOverride_args where
+instance Arbitrary.Arbitrary ApplySettingOverride_args where 
   arbitrary = Monad.liftM ApplySettingOverride_args (Arbitrary.arbitrary)
   shrink obj | obj == default_ApplySettingOverride_args = []
              | otherwise = Maybe.catMaybes
@@ -2116,13 +2116,13 @@ instance Serializable.ThriftSerializable ApplySettingOverride_result where
   encode = encode_ApplySettingOverride_result
   decode = decode_ApplySettingOverride_result
 instance Hashable.Hashable ApplySettingOverride_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applySettingOverride_result_invalid_request record   `Hashable.hashWithSalt` applySettingOverride_result_operation_error record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applySettingOverride_result_invalid_request record   `Hashable.hashWithSalt` applySettingOverride_result_operation_error record  
 instance DeepSeq.NFData ApplySettingOverride_result where
   rnf _record275 =
     DeepSeq.rnf (applySettingOverride_result_invalid_request _record275) `seq`
     DeepSeq.rnf (applySettingOverride_result_operation_error _record275) `seq`
     ()
-instance Arbitrary.Arbitrary ApplySettingOverride_result where
+instance Arbitrary.Arbitrary ApplySettingOverride_result where 
   arbitrary = Monad.liftM ApplySettingOverride_result (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_ApplySettingOverride_result = []
@@ -2132,7 +2132,7 @@ instance Arbitrary.Arbitrary ApplySettingOverride_result where
     ]
 -- | Translate a 'ApplySettingOverride_result' to a 'Types.ThriftVal'
 from_ApplySettingOverride_result :: ApplySettingOverride_result -> Types.ThriftVal
-from_ApplySettingOverride_result record = Types.TStruct $ Map.fromList
+from_ApplySettingOverride_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v278 -> (1, ("invalid_request",Exceptions_Types.from_InvalidRequest _v278))) <$> applySettingOverride_result_invalid_request record, (\_v278 -> (2, ("operation_error",Exceptions_Types.from_OperationError _v278))) <$> applySettingOverride_result_operation_error record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v278 -> (1, ("invalid_request",Exceptions_Types.from_InvalidRequest _v278))) <$> applySettingOverride_result_invalid_request record
@@ -2175,12 +2175,12 @@ instance Serializable.ThriftSerializable RemoveSettingOverride_args where
   encode = encode_RemoveSettingOverride_args
   decode = decode_RemoveSettingOverride_args
 instance Hashable.Hashable RemoveSettingOverride_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeSettingOverride_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeSettingOverride_args_request record  
 instance DeepSeq.NFData RemoveSettingOverride_args where
   rnf _record283 =
     DeepSeq.rnf (removeSettingOverride_args_request _record283) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveSettingOverride_args where
+instance Arbitrary.Arbitrary RemoveSettingOverride_args where 
   arbitrary = Monad.liftM RemoveSettingOverride_args (Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveSettingOverride_args = []
              | otherwise = Maybe.catMaybes
@@ -2223,11 +2223,11 @@ instance Serializable.ThriftSerializable RemoveSettingOverride_result where
   encode = encode_RemoveSettingOverride_result
   decode = decode_RemoveSettingOverride_result
 instance Hashable.Hashable RemoveSettingOverride_result where
-  hashWithSalt salt record = salt
+  hashWithSalt salt record = salt  
 instance DeepSeq.NFData RemoveSettingOverride_result where
   rnf _record290 =
     ()
-instance Arbitrary.Arbitrary RemoveSettingOverride_result where
+instance Arbitrary.Arbitrary RemoveSettingOverride_result where 
   arbitrary = QuickCheck.elements [RemoveSettingOverride_result]
 -- | Translate a 'RemoveSettingOverride_result' to a 'Types.ThriftVal'
 from_RemoveSettingOverride_result :: RemoveSettingOverride_result -> Types.ThriftVal
@@ -2267,12 +2267,12 @@ instance Serializable.ThriftSerializable TakeLogTreeSnapshot_args where
   encode = encode_TakeLogTreeSnapshot_args
   decode = decode_TakeLogTreeSnapshot_args
 instance Hashable.Hashable TakeLogTreeSnapshot_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeLogTreeSnapshot_args_min_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeLogTreeSnapshot_args_min_version record  
 instance DeepSeq.NFData TakeLogTreeSnapshot_args where
   rnf _record296 =
     DeepSeq.rnf (takeLogTreeSnapshot_args_min_version _record296) `seq`
     ()
-instance Arbitrary.Arbitrary TakeLogTreeSnapshot_args where
+instance Arbitrary.Arbitrary TakeLogTreeSnapshot_args where 
   arbitrary = Monad.liftM TakeLogTreeSnapshot_args (Arbitrary.arbitrary)
   shrink obj | obj == default_TakeLogTreeSnapshot_args = []
              | otherwise = Maybe.catMaybes
@@ -2321,14 +2321,14 @@ instance Serializable.ThriftSerializable TakeLogTreeSnapshot_result where
   encode = encode_TakeLogTreeSnapshot_result
   decode = decode_TakeLogTreeSnapshot_result
 instance Hashable.Hashable TakeLogTreeSnapshot_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeLogTreeSnapshot_result_stale record   `Hashable.hashWithSalt` takeLogTreeSnapshot_result_notready record   `Hashable.hashWithSalt` takeLogTreeSnapshot_result_notsupported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeLogTreeSnapshot_result_stale record   `Hashable.hashWithSalt` takeLogTreeSnapshot_result_notready record   `Hashable.hashWithSalt` takeLogTreeSnapshot_result_notsupported record  
 instance DeepSeq.NFData TakeLogTreeSnapshot_result where
   rnf _record303 =
     DeepSeq.rnf (takeLogTreeSnapshot_result_stale _record303) `seq`
     DeepSeq.rnf (takeLogTreeSnapshot_result_notready _record303) `seq`
     DeepSeq.rnf (takeLogTreeSnapshot_result_notsupported _record303) `seq`
     ()
-instance Arbitrary.Arbitrary TakeLogTreeSnapshot_result where
+instance Arbitrary.Arbitrary TakeLogTreeSnapshot_result where 
   arbitrary = Monad.liftM TakeLogTreeSnapshot_result (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -2340,7 +2340,7 @@ instance Arbitrary.Arbitrary TakeLogTreeSnapshot_result where
     ]
 -- | Translate a 'TakeLogTreeSnapshot_result' to a 'Types.ThriftVal'
 from_TakeLogTreeSnapshot_result :: TakeLogTreeSnapshot_result -> Types.ThriftVal
-from_TakeLogTreeSnapshot_result record = Types.TStruct $ Map.fromList
+from_TakeLogTreeSnapshot_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v306 -> (1, ("stale",Exceptions_Types.from_StaleVersion _v306))) <$> takeLogTreeSnapshot_result_stale record, (\_v306 -> (2, ("notready",Exceptions_Types.from_NodeNotReady _v306))) <$> takeLogTreeSnapshot_result_notready record, (\_v306 -> (3, ("notsupported",Exceptions_Types.from_NotSupported _v306))) <$> takeLogTreeSnapshot_result_notsupported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v306 -> (1, ("stale",Exceptions_Types.from_StaleVersion _v306))) <$> takeLogTreeSnapshot_result_stale record
@@ -2386,12 +2386,12 @@ instance Serializable.ThriftSerializable TakeMaintenanceLogSnapshot_args where
   encode = encode_TakeMaintenanceLogSnapshot_args
   decode = decode_TakeMaintenanceLogSnapshot_args
 instance Hashable.Hashable TakeMaintenanceLogSnapshot_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_args_min_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_args_min_version record  
 instance DeepSeq.NFData TakeMaintenanceLogSnapshot_args where
   rnf _record312 =
     DeepSeq.rnf (takeMaintenanceLogSnapshot_args_min_version _record312) `seq`
     ()
-instance Arbitrary.Arbitrary TakeMaintenanceLogSnapshot_args where
+instance Arbitrary.Arbitrary TakeMaintenanceLogSnapshot_args where 
   arbitrary = Monad.liftM TakeMaintenanceLogSnapshot_args (Arbitrary.arbitrary)
   shrink obj | obj == default_TakeMaintenanceLogSnapshot_args = []
              | otherwise = Maybe.catMaybes
@@ -2440,14 +2440,14 @@ instance Serializable.ThriftSerializable TakeMaintenanceLogSnapshot_result where
   encode = encode_TakeMaintenanceLogSnapshot_result
   decode = decode_TakeMaintenanceLogSnapshot_result
 instance Hashable.Hashable TakeMaintenanceLogSnapshot_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_result_stale record   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_result_notready record   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_result_notsupported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_result_stale record   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_result_notready record   `Hashable.hashWithSalt` takeMaintenanceLogSnapshot_result_notsupported record  
 instance DeepSeq.NFData TakeMaintenanceLogSnapshot_result where
   rnf _record319 =
     DeepSeq.rnf (takeMaintenanceLogSnapshot_result_stale _record319) `seq`
     DeepSeq.rnf (takeMaintenanceLogSnapshot_result_notready _record319) `seq`
     DeepSeq.rnf (takeMaintenanceLogSnapshot_result_notsupported _record319) `seq`
     ()
-instance Arbitrary.Arbitrary TakeMaintenanceLogSnapshot_result where
+instance Arbitrary.Arbitrary TakeMaintenanceLogSnapshot_result where 
   arbitrary = Monad.liftM TakeMaintenanceLogSnapshot_result (Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -2459,7 +2459,7 @@ instance Arbitrary.Arbitrary TakeMaintenanceLogSnapshot_result where
     ]
 -- | Translate a 'TakeMaintenanceLogSnapshot_result' to a 'Types.ThriftVal'
 from_TakeMaintenanceLogSnapshot_result :: TakeMaintenanceLogSnapshot_result -> Types.ThriftVal
-from_TakeMaintenanceLogSnapshot_result record = Types.TStruct $ Map.fromList
+from_TakeMaintenanceLogSnapshot_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v322 -> (1, ("stale",Exceptions_Types.from_StaleVersion _v322))) <$> takeMaintenanceLogSnapshot_result_stale record, (\_v322 -> (2, ("notready",Exceptions_Types.from_NodeNotReady _v322))) <$> takeMaintenanceLogSnapshot_result_notready record, (\_v322 -> (3, ("notsupported",Exceptions_Types.from_NotSupported _v322))) <$> takeMaintenanceLogSnapshot_result_notsupported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v322 -> (1, ("stale",Exceptions_Types.from_StaleVersion _v322))) <$> takeMaintenanceLogSnapshot_result_stale record
@@ -2505,12 +2505,12 @@ instance Serializable.ThriftSerializable GetLogGroupThroughput_args where
   encode = encode_GetLogGroupThroughput_args
   decode = decode_GetLogGroupThroughput_args
 instance Hashable.Hashable GetLogGroupThroughput_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupThroughput_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupThroughput_args_request record  
 instance DeepSeq.NFData GetLogGroupThroughput_args where
   rnf _record328 =
     DeepSeq.rnf (getLogGroupThroughput_args_request _record328) `seq`
     ()
-instance Arbitrary.Arbitrary GetLogGroupThroughput_args where
+instance Arbitrary.Arbitrary GetLogGroupThroughput_args where 
   arbitrary = Monad.liftM GetLogGroupThroughput_args (Arbitrary.arbitrary)
   shrink obj | obj == default_GetLogGroupThroughput_args = []
              | otherwise = Maybe.catMaybes
@@ -2555,12 +2555,12 @@ instance Serializable.ThriftSerializable GetLogGroupThroughput_result where
   encode = encode_GetLogGroupThroughput_result
   decode = decode_GetLogGroupThroughput_result
 instance Hashable.Hashable GetLogGroupThroughput_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupThroughput_result_success record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupThroughput_result_success record  
 instance DeepSeq.NFData GetLogGroupThroughput_result where
   rnf _record335 =
     DeepSeq.rnf (getLogGroupThroughput_result_success _record335) `seq`
     ()
-instance Arbitrary.Arbitrary GetLogGroupThroughput_result where
+instance Arbitrary.Arbitrary GetLogGroupThroughput_result where 
   arbitrary = Monad.liftM GetLogGroupThroughput_result (Arbitrary.arbitrary)
   shrink obj | obj == default_GetLogGroupThroughput_result = []
              | otherwise = Maybe.catMaybes
@@ -2605,12 +2605,12 @@ instance Serializable.ThriftSerializable GetLogGroupCustomCounters_args where
   encode = encode_GetLogGroupCustomCounters_args
   decode = decode_GetLogGroupCustomCounters_args
 instance Hashable.Hashable GetLogGroupCustomCounters_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupCustomCounters_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupCustomCounters_args_request record  
 instance DeepSeq.NFData GetLogGroupCustomCounters_args where
   rnf _record342 =
     DeepSeq.rnf (getLogGroupCustomCounters_args_request _record342) `seq`
     ()
-instance Arbitrary.Arbitrary GetLogGroupCustomCounters_args where
+instance Arbitrary.Arbitrary GetLogGroupCustomCounters_args where 
   arbitrary = Monad.liftM GetLogGroupCustomCounters_args (Arbitrary.arbitrary)
   shrink obj | obj == default_GetLogGroupCustomCounters_args = []
              | otherwise = Maybe.catMaybes
@@ -2659,14 +2659,14 @@ instance Serializable.ThriftSerializable GetLogGroupCustomCounters_result where
   encode = encode_GetLogGroupCustomCounters_result
   decode = decode_GetLogGroupCustomCounters_result
 instance Hashable.Hashable GetLogGroupCustomCounters_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupCustomCounters_result_success record   `Hashable.hashWithSalt` getLogGroupCustomCounters_result_notsupported record   `Hashable.hashWithSalt` getLogGroupCustomCounters_result_invalid_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getLogGroupCustomCounters_result_success record   `Hashable.hashWithSalt` getLogGroupCustomCounters_result_notsupported record   `Hashable.hashWithSalt` getLogGroupCustomCounters_result_invalid_request record  
 instance DeepSeq.NFData GetLogGroupCustomCounters_result where
   rnf _record349 =
     DeepSeq.rnf (getLogGroupCustomCounters_result_success _record349) `seq`
     DeepSeq.rnf (getLogGroupCustomCounters_result_notsupported _record349) `seq`
     DeepSeq.rnf (getLogGroupCustomCounters_result_invalid_request _record349) `seq`
     ()
-instance Arbitrary.Arbitrary GetLogGroupCustomCounters_result where
+instance Arbitrary.Arbitrary GetLogGroupCustomCounters_result where 
   arbitrary = Monad.liftM GetLogGroupCustomCounters_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
@@ -2678,7 +2678,7 @@ instance Arbitrary.Arbitrary GetLogGroupCustomCounters_result where
     ]
 -- | Translate a 'GetLogGroupCustomCounters_result' to a 'Types.ThriftVal'
 from_GetLogGroupCustomCounters_result :: GetLogGroupCustomCounters_result -> Types.ThriftVal
-from_GetLogGroupCustomCounters_result record = Types.TStruct $ Map.fromList
+from_GetLogGroupCustomCounters_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v352 -> (1, ("notsupported",Exceptions_Types.from_NotSupported _v352))) <$> getLogGroupCustomCounters_result_notsupported record, (\_v352 -> (2, ("invalid_request",Exceptions_Types.from_InvalidRequest _v352))) <$> getLogGroupCustomCounters_result_invalid_request record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v352 -> Just (0, ("success",Logtree_Types.from_LogGroupCustomCountersResponse _v352))) $ getLogGroupCustomCounters_result_success record
@@ -2724,12 +2724,12 @@ instance Serializable.ThriftSerializable ExecuteAdminCommand_args where
   encode = encode_ExecuteAdminCommand_args
   decode = decode_ExecuteAdminCommand_args
 instance Hashable.Hashable ExecuteAdminCommand_args where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` executeAdminCommand_args_request record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` executeAdminCommand_args_request record  
 instance DeepSeq.NFData ExecuteAdminCommand_args where
   rnf _record358 =
     DeepSeq.rnf (executeAdminCommand_args_request _record358) `seq`
     ()
-instance Arbitrary.Arbitrary ExecuteAdminCommand_args where
+instance Arbitrary.Arbitrary ExecuteAdminCommand_args where 
   arbitrary = Monad.liftM ExecuteAdminCommand_args (Arbitrary.arbitrary)
   shrink obj | obj == default_ExecuteAdminCommand_args = []
              | otherwise = Maybe.catMaybes
@@ -2776,13 +2776,13 @@ instance Serializable.ThriftSerializable ExecuteAdminCommand_result where
   encode = encode_ExecuteAdminCommand_result
   decode = decode_ExecuteAdminCommand_result
 instance Hashable.Hashable ExecuteAdminCommand_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` executeAdminCommand_result_success record   `Hashable.hashWithSalt` executeAdminCommand_result_notsupported record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` executeAdminCommand_result_success record   `Hashable.hashWithSalt` executeAdminCommand_result_notsupported record  
 instance DeepSeq.NFData ExecuteAdminCommand_result where
   rnf _record365 =
     DeepSeq.rnf (executeAdminCommand_result_success _record365) `seq`
     DeepSeq.rnf (executeAdminCommand_result_notsupported _record365) `seq`
     ()
-instance Arbitrary.Arbitrary ExecuteAdminCommand_result where
+instance Arbitrary.Arbitrary ExecuteAdminCommand_result where 
   arbitrary = Monad.liftM ExecuteAdminCommand_result (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_ExecuteAdminCommand_result = []
@@ -2792,7 +2792,7 @@ instance Arbitrary.Arbitrary ExecuteAdminCommand_result where
     ]
 -- | Translate a 'ExecuteAdminCommand_result' to a 'Types.ThriftVal'
 from_ExecuteAdminCommand_result :: ExecuteAdminCommand_result -> Types.ThriftVal
-from_ExecuteAdminCommand_result record = Types.TStruct $ Map.fromList
+from_ExecuteAdminCommand_result record = Types.TStruct $ Map.fromList 
   (let exns = Maybe.catMaybes [ (\_v368 -> (1, ("notsupported",Exceptions_Types.from_NotSupported _v368))) <$> executeAdminCommand_result_notsupported record]
   in if not (null exns) then exns else Maybe.catMaybes
     [ (\_v368 -> Just (0, ("success",Admin_commands_Types.from_AdminCommandResponse _v368))) $ executeAdminCommand_result_success record
@@ -2833,11 +2833,11 @@ instance Serializable.ThriftSerializable GetClusterName_args where
   encode = encode_GetClusterName_args
   decode = decode_GetClusterName_args
 instance Hashable.Hashable GetClusterName_args where
-  hashWithSalt salt record = salt
+  hashWithSalt salt record = salt  
 instance DeepSeq.NFData GetClusterName_args where
   rnf _record373 =
     ()
-instance Arbitrary.Arbitrary GetClusterName_args where
+instance Arbitrary.Arbitrary GetClusterName_args where 
   arbitrary = QuickCheck.elements [GetClusterName_args]
 -- | Translate a 'GetClusterName_args' to a 'Types.ThriftVal'
 from_GetClusterName_args :: GetClusterName_args -> Types.ThriftVal
@@ -2877,12 +2877,12 @@ instance Serializable.ThriftSerializable GetClusterName_result where
   encode = encode_GetClusterName_result
   decode = decode_GetClusterName_result
 instance Hashable.Hashable GetClusterName_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getClusterName_result_success record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` getClusterName_result_success record  
 instance DeepSeq.NFData GetClusterName_result where
   rnf _record379 =
     DeepSeq.rnf (getClusterName_result_success _record379) `seq`
     ()
-instance Arbitrary.Arbitrary GetClusterName_result where
+instance Arbitrary.Arbitrary GetClusterName_result where 
   arbitrary = Monad.liftM GetClusterName_result (Arbitrary.arbitrary)
   shrink obj | obj == default_GetClusterName_result = []
              | otherwise = Maybe.catMaybes
@@ -2925,11 +2925,11 @@ instance Serializable.ThriftSerializable DumpServerConfigJson_args where
   encode = encode_DumpServerConfigJson_args
   decode = decode_DumpServerConfigJson_args
 instance Hashable.Hashable DumpServerConfigJson_args where
-  hashWithSalt salt record = salt
+  hashWithSalt salt record = salt  
 instance DeepSeq.NFData DumpServerConfigJson_args where
   rnf _record386 =
     ()
-instance Arbitrary.Arbitrary DumpServerConfigJson_args where
+instance Arbitrary.Arbitrary DumpServerConfigJson_args where 
   arbitrary = QuickCheck.elements [DumpServerConfigJson_args]
 -- | Translate a 'DumpServerConfigJson_args' to a 'Types.ThriftVal'
 from_DumpServerConfigJson_args :: DumpServerConfigJson_args -> Types.ThriftVal
@@ -2969,12 +2969,12 @@ instance Serializable.ThriftSerializable DumpServerConfigJson_result where
   encode = encode_DumpServerConfigJson_result
   decode = decode_DumpServerConfigJson_result
 instance Hashable.Hashable DumpServerConfigJson_result where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` dumpServerConfigJson_result_success record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` dumpServerConfigJson_result_success record  
 instance DeepSeq.NFData DumpServerConfigJson_result where
   rnf _record392 =
     DeepSeq.rnf (dumpServerConfigJson_result_success _record392) `seq`
     ()
-instance Arbitrary.Arbitrary DumpServerConfigJson_result where
+instance Arbitrary.Arbitrary DumpServerConfigJson_result where 
   arbitrary = Monad.liftM DumpServerConfigJson_result (Arbitrary.arbitrary)
   shrink obj | obj == default_DumpServerConfigJson_result = []
              | otherwise = Maybe.catMaybes

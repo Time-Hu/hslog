@@ -13,19 +13,19 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Admin.AdminAPI_Fuzzer (main) where
-import qualified HStream.Store.Thrift.Admin.Admin_Types
-import qualified HStream.Store.Thrift.Admin.AdminAPI_Client as Client
+module Facebook.Logdevice.Thrift.Admin.AdminAPI_Fuzzer (main) where
+import qualified Facebook.Logdevice.Thrift.Admin.Admin_Types
+import qualified Facebook.Logdevice.Thrift.Admin.AdminAPI_Client as Client
 import qualified Facebook.FB303.Fb303_Types
-import qualified HStream.Store.Thrift.Common.Common_Types
-import qualified HStream.Store.Thrift.AdminCommand.Admin_commands_Types
-import qualified HStream.Store.Thrift.ClusterMembership.Cluster_membership_Types
-import qualified HStream.Store.Thrift.Exceptions.Exceptions_Types
-import qualified HStream.Store.Thrift.LogTree.Logtree_Types
-import qualified HStream.Store.Thrift.Maintenance.Maintenance_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types
-import qualified HStream.Store.Thrift.Safety.Safety_Types
-import qualified HStream.Store.Thrift.Settings.Settings_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types
+import qualified Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Types
+import qualified Facebook.Logdevice.Thrift.ClusterMembership.Cluster_membership_Types
+import qualified Facebook.Logdevice.Thrift.Exceptions.Exceptions_Types
+import qualified Facebook.Logdevice.Thrift.LogTree.Logtree_Types
+import qualified Facebook.Logdevice.Thrift.Maintenance.Maintenance_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Safety.Safety_Types
+import qualified Facebook.Logdevice.Thrift.Settings.Settings_Types
 
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
@@ -61,15 +61,15 @@ import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
 import qualified Facebook.FB303.Fb303_Types as Fb303_Types
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
-import qualified HStream.Store.Thrift.AdminCommand.Admin_commands_Types as Admin_commands_Types
-import qualified HStream.Store.Thrift.ClusterMembership.Cluster_membership_Types as Cluster_membership_Types
-import qualified HStream.Store.Thrift.Exceptions.Exceptions_Types as Exceptions_Types
-import qualified HStream.Store.Thrift.LogTree.Logtree_Types as Logtree_Types
-import qualified HStream.Store.Thrift.Maintenance.Maintenance_Types as Maintenance_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
-import qualified HStream.Store.Thrift.Safety.Safety_Types as Safety_Types
-import qualified HStream.Store.Thrift.Settings.Settings_Types as Settings_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Types as Admin_commands_Types
+import qualified Facebook.Logdevice.Thrift.ClusterMembership.Cluster_membership_Types as Cluster_membership_Types
+import qualified Facebook.Logdevice.Thrift.Exceptions.Exceptions_Types as Exceptions_Types
+import qualified Facebook.Logdevice.Thrift.LogTree.Logtree_Types as Logtree_Types
+import qualified Facebook.Logdevice.Thrift.Maintenance.Maintenance_Types as Maintenance_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Safety.Safety_Types as Safety_Types
+import qualified Facebook.Logdevice.Thrift.Settings.Settings_Types as Settings_Types
 
 import Prelude ((>>), print)
 import qualified Prelude as P
@@ -87,7 +87,7 @@ import Thrift.FuzzerSupport
 
 handleOptions :: ([Options -> Options], [String], [String]) -> Options
 handleOptions (transformers, (serviceName:[]), []) | serviceName `P.elem` serviceNames
-    = (P.foldl (P.flip ($)) defaultOptions transformers) { opt_service = serviceName }
+    = (P.foldl (P.flip ($)) defaultOptions transformers) { opt_service = serviceName } 
 handleOptions (_, (serviceName:[]), []) | P.otherwise
     = P.error $ usage ++ "\nUnknown serviceName " ++ serviceName ++ ", should be one of " ++ (P.show serviceNames)
 handleOptions (_, [], _) = P.error $ usage ++ "\nMissing mandatory serviceName to fuzz."
@@ -101,7 +101,7 @@ main = do
     fuzz config
 
 selectFuzzer :: Options -> (Options -> IO ())
-selectFuzzer (Options _host _port service _timeout _framed _verbose)
+selectFuzzer (Options _host _port service _timeout _framed _verbose) 
     = fromJust $ P.lookup service fuzzerFunctions
 
 fuzz :: Options -> IO ()
@@ -535,3 +535,4 @@ executeAdminCommand_exceptionHandler (a1) = do
   P.putStrLn $ "Got exception on data:"
   P.putStrLn $ "(" ++ show a1 ++ ")"
 executeAdminCommand_fuzzOnce (a1) client = Client.executeAdminCommand client a1 >> return ()
+

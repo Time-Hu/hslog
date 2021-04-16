@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Settings.Settings_Types where
+module Facebook.Logdevice.Thrift.Settings.Settings_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -94,14 +94,14 @@ instance Serializable.ThriftSerializable Setting where
   encode = encode_Setting
   decode = decode_Setting
 instance Hashable.Hashable Setting where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` setting_currentValue record   `Hashable.hashWithSalt` setting_defaultValue record   `Hashable.hashWithSalt` setting_sources record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` setting_currentValue record   `Hashable.hashWithSalt` setting_defaultValue record   `Hashable.hashWithSalt` setting_sources record  
 instance DeepSeq.NFData Setting where
   rnf _record0 =
     DeepSeq.rnf (setting_currentValue _record0) `seq`
     DeepSeq.rnf (setting_defaultValue _record0) `seq`
     DeepSeq.rnf (setting_sources _record0) `seq`
     ()
-instance Arbitrary.Arbitrary Setting where
+instance Arbitrary.Arbitrary Setting where 
   arbitrary = Monad.liftM Setting (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -156,12 +156,12 @@ instance Serializable.ThriftSerializable SettingsResponse where
   encode = encode_SettingsResponse
   decode = decode_SettingsResponse
 instance Hashable.Hashable SettingsResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` settingsResponse_settings record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` settingsResponse_settings record  
 instance DeepSeq.NFData SettingsResponse where
   rnf _record15 =
     DeepSeq.rnf (settingsResponse_settings _record15) `seq`
     ()
-instance Arbitrary.Arbitrary SettingsResponse where
+instance Arbitrary.Arbitrary SettingsResponse where 
   arbitrary = Monad.liftM SettingsResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_SettingsResponse = []
              | otherwise = Maybe.catMaybes
@@ -206,12 +206,12 @@ instance Serializable.ThriftSerializable SettingsRequest where
   encode = encode_SettingsRequest
   decode = decode_SettingsRequest
 instance Hashable.Hashable SettingsRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` settingsRequest_settings record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` settingsRequest_settings record  
 instance DeepSeq.NFData SettingsRequest where
   rnf _record28 =
     DeepSeq.rnf (settingsRequest_settings _record28) `seq`
     ()
-instance Arbitrary.Arbitrary SettingsRequest where
+instance Arbitrary.Arbitrary SettingsRequest where 
   arbitrary = Monad.liftM SettingsRequest (Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_SettingsRequest = []
              | otherwise = Maybe.catMaybes
@@ -260,14 +260,14 @@ instance Serializable.ThriftSerializable ApplySettingOverrideRequest where
   encode = encode_ApplySettingOverrideRequest
   decode = decode_ApplySettingOverrideRequest
 instance Hashable.Hashable ApplySettingOverrideRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applySettingOverrideRequest_name record   `Hashable.hashWithSalt` applySettingOverrideRequest_value record   `Hashable.hashWithSalt` applySettingOverrideRequest_ttl_seconds record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` applySettingOverrideRequest_name record   `Hashable.hashWithSalt` applySettingOverrideRequest_value record   `Hashable.hashWithSalt` applySettingOverrideRequest_ttl_seconds record  
 instance DeepSeq.NFData ApplySettingOverrideRequest where
   rnf _record39 =
     DeepSeq.rnf (applySettingOverrideRequest_name _record39) `seq`
     DeepSeq.rnf (applySettingOverrideRequest_value _record39) `seq`
     DeepSeq.rnf (applySettingOverrideRequest_ttl_seconds _record39) `seq`
     ()
-instance Arbitrary.Arbitrary ApplySettingOverrideRequest where
+instance Arbitrary.Arbitrary ApplySettingOverrideRequest where 
   arbitrary = Monad.liftM ApplySettingOverrideRequest (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -322,12 +322,12 @@ instance Serializable.ThriftSerializable RemoveSettingOverrideRequest where
   encode = encode_RemoveSettingOverrideRequest
   decode = decode_RemoveSettingOverrideRequest
 instance Hashable.Hashable RemoveSettingOverrideRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeSettingOverrideRequest_name record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeSettingOverrideRequest_name record  
 instance DeepSeq.NFData RemoveSettingOverrideRequest where
   rnf _record48 =
     DeepSeq.rnf (removeSettingOverrideRequest_name _record48) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveSettingOverrideRequest where
+instance Arbitrary.Arbitrary RemoveSettingOverrideRequest where 
   arbitrary = Monad.liftM RemoveSettingOverrideRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveSettingOverrideRequest = []
              | otherwise = Maybe.catMaybes

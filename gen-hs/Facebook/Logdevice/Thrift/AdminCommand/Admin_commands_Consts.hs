@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.AdminCommand.Admin_commands_Consts where
+module Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Consts where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -48,4 +48,4 @@ import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
 
-import qualified HStream.Store.Thrift.AdminCommand.Admin_commands_Types
+import qualified Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Types

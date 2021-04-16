@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Exceptions.Exceptions_Types where
+module Facebook.Logdevice.Thrift.Exceptions.Exceptions_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,7 +47,7 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
 
 
 -- | Definition of the NodeNotReady struct
@@ -60,12 +60,12 @@ instance Serializable.ThriftSerializable NodeNotReady where
   encode = encode_NodeNotReady
   decode = decode_NodeNotReady
 instance Hashable.Hashable NodeNotReady where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeNotReady_message record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodeNotReady_message record  
 instance DeepSeq.NFData NodeNotReady where
   rnf _record0 =
     DeepSeq.rnf (nodeNotReady_message _record0) `seq`
     ()
-instance Arbitrary.Arbitrary NodeNotReady where
+instance Arbitrary.Arbitrary NodeNotReady where 
   arbitrary = Monad.liftM NodeNotReady (Arbitrary.arbitrary)
   shrink obj | obj == default_NodeNotReady = []
              | otherwise = Maybe.catMaybes
@@ -113,13 +113,13 @@ instance Serializable.ThriftSerializable StaleVersion where
   encode = encode_StaleVersion
   decode = decode_StaleVersion
 instance Hashable.Hashable StaleVersion where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` staleVersion_message record   `Hashable.hashWithSalt` staleVersion_server_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` staleVersion_message record   `Hashable.hashWithSalt` staleVersion_server_version record  
 instance DeepSeq.NFData StaleVersion where
   rnf _record7 =
     DeepSeq.rnf (staleVersion_message _record7) `seq`
     DeepSeq.rnf (staleVersion_server_version _record7) `seq`
     ()
-instance Arbitrary.Arbitrary StaleVersion where
+instance Arbitrary.Arbitrary StaleVersion where 
   arbitrary = Monad.liftM StaleVersion (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_StaleVersion = []
@@ -170,12 +170,12 @@ instance Serializable.ThriftSerializable NotSupported where
   encode = encode_NotSupported
   decode = decode_NotSupported
 instance Hashable.Hashable NotSupported where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` notSupported_message record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` notSupported_message record  
 instance DeepSeq.NFData NotSupported where
   rnf _record15 =
     DeepSeq.rnf (notSupported_message _record15) `seq`
     ()
-instance Arbitrary.Arbitrary NotSupported where
+instance Arbitrary.Arbitrary NotSupported where 
   arbitrary = Monad.liftM NotSupported (Arbitrary.arbitrary)
   shrink obj | obj == default_NotSupported = []
              | otherwise = Maybe.catMaybes
@@ -223,13 +223,13 @@ instance Serializable.ThriftSerializable OperationError where
   encode = encode_OperationError
   decode = decode_OperationError
 instance Hashable.Hashable OperationError where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` operationError_message record   `Hashable.hashWithSalt` operationError_error_code record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` operationError_message record   `Hashable.hashWithSalt` operationError_error_code record  
 instance DeepSeq.NFData OperationError where
   rnf _record22 =
     DeepSeq.rnf (operationError_message _record22) `seq`
     DeepSeq.rnf (operationError_error_code _record22) `seq`
     ()
-instance Arbitrary.Arbitrary OperationError where
+instance Arbitrary.Arbitrary OperationError where 
   arbitrary = Monad.liftM OperationError (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_OperationError = []
@@ -280,12 +280,12 @@ instance Serializable.ThriftSerializable InvalidRequest where
   encode = encode_InvalidRequest
   decode = decode_InvalidRequest
 instance Hashable.Hashable InvalidRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` invalidRequest_message record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` invalidRequest_message record  
 instance DeepSeq.NFData InvalidRequest where
   rnf _record30 =
     DeepSeq.rnf (invalidRequest_message _record30) `seq`
     ()
-instance Arbitrary.Arbitrary InvalidRequest where
+instance Arbitrary.Arbitrary InvalidRequest where 
   arbitrary = Monad.liftM InvalidRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_InvalidRequest = []
              | otherwise = Maybe.catMaybes
@@ -331,12 +331,12 @@ instance Serializable.ThriftSerializable MaintenanceClash where
   encode = encode_MaintenanceClash
   decode = decode_MaintenanceClash
 instance Hashable.Hashable MaintenanceClash where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceClash_message record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceClash_message record  
 instance DeepSeq.NFData MaintenanceClash where
   rnf _record37 =
     DeepSeq.rnf (maintenanceClash_message _record37) `seq`
     ()
-instance Arbitrary.Arbitrary MaintenanceClash where
+instance Arbitrary.Arbitrary MaintenanceClash where 
   arbitrary = Monad.liftM MaintenanceClash (Arbitrary.arbitrary)
   shrink obj | obj == default_MaintenanceClash = []
              | otherwise = Maybe.catMaybes
@@ -382,12 +382,12 @@ instance Serializable.ThriftSerializable MaintenanceMatchError where
   encode = encode_MaintenanceMatchError
   decode = decode_MaintenanceMatchError
 instance Hashable.Hashable MaintenanceMatchError where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceMatchError_message record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceMatchError_message record  
 instance DeepSeq.NFData MaintenanceMatchError where
   rnf _record44 =
     DeepSeq.rnf (maintenanceMatchError_message _record44) `seq`
     ()
-instance Arbitrary.Arbitrary MaintenanceMatchError where
+instance Arbitrary.Arbitrary MaintenanceMatchError where 
   arbitrary = Monad.liftM MaintenanceMatchError (Arbitrary.arbitrary)
   shrink obj | obj == default_MaintenanceMatchError = []
              | otherwise = Maybe.catMaybes
@@ -435,13 +435,13 @@ instance Serializable.ThriftSerializable NodesConfigurationManagerError where
   encode = encode_NodesConfigurationManagerError
   decode = decode_NodesConfigurationManagerError
 instance Hashable.Hashable NodesConfigurationManagerError where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesConfigurationManagerError_message record   `Hashable.hashWithSalt` nodesConfigurationManagerError_error_code record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` nodesConfigurationManagerError_message record   `Hashable.hashWithSalt` nodesConfigurationManagerError_error_code record  
 instance DeepSeq.NFData NodesConfigurationManagerError where
   rnf _record51 =
     DeepSeq.rnf (nodesConfigurationManagerError_message _record51) `seq`
     DeepSeq.rnf (nodesConfigurationManagerError_error_code _record51) `seq`
     ()
-instance Arbitrary.Arbitrary NodesConfigurationManagerError where
+instance Arbitrary.Arbitrary NodesConfigurationManagerError where 
   arbitrary = Monad.liftM NodesConfigurationManagerError (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_NodesConfigurationManagerError = []

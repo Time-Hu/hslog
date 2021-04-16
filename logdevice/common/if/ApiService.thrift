@@ -9,7 +9,7 @@
 include "/Workplace/logth/hslog/common/fb303/if/fb303.thrift"
 include "/Workplace/logth/hslog/logdevice/common/if/ApiModel.thrift"
 
-namespace hs HStream.Store.Thrift.APIService
+namespace hs Facebook.Logdevice.Thrift.APIService
 // *** LogDevice server API
 service LogDeviceAPI extends fb303.FacebookService {
   // Compatibility part of API starts

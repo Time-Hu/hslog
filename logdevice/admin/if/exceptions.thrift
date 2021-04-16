@@ -8,7 +8,7 @@
 
 include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
-namespace hs HStream.Store.Thrift.Exceptions
+namespace hs Facebook.Logdevice.Thrift.Exceptions
 
 /**
  * The node you are communicating with is not ready to respond yet.

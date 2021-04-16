@@ -10,7 +10,7 @@ include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
 include "/Workplace/logth/hslog/logdevice/common/membership/Membership.thrift"
 
-namespace hs HStream.Store.Thrift.Nodes
+namespace hs Facebook.Logdevice.Thrift.Nodes
 
 
 struct SequencerConfig {

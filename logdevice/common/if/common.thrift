@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs HStream.Store.Thrift.Common
+namespace hs Facebook.Logdevice.Thrift.Common
 
 /**
  * Because thrift doesn't have a u64.
@@ -50,7 +50,7 @@ typedef i64 Timestamp /** UNIX time in milliseconds */
 typedef i16 NodeIndex /** node_index_t */
 typedef i16 ShardIndex /** shard_index_t */
 
-const common.ShardIndex ALL_SHARDS = -1 /** Indicates all shards in a node */
+const ShardIndex ALL_SHARDS = -1 /** Indicates all shards in a node */
 
 /**
  * This is an identifier for a node, it can locate a node by either the

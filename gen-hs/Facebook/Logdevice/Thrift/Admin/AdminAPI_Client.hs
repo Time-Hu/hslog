@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Admin.AdminAPI_Client(getNodesConfig,getNodesState,addNodes,updateNodes,removeNodes,markShardsAsProvisioned,bumpNodeGeneration,bootstrapCluster,getMaintenances,applyMaintenance,removeMaintenances,markAllShardsUnrecoverable,checkImpact,getLogTreeInfo,getReplicationInfo,getSettings,applySettingOverride,removeSettingOverride,takeLogTreeSnapshot,takeMaintenanceLogSnapshot,getLogGroupThroughput,getLogGroupCustomCounters,executeAdminCommand,getClusterName,dumpServerConfigJson) where
+module Facebook.Logdevice.Thrift.Admin.AdminAPI_Client(getNodesConfig,getNodesState,addNodes,updateNodes,removeNodes,markShardsAsProvisioned,bumpNodeGeneration,bootstrapCluster,getMaintenances,applyMaintenance,removeMaintenances,markAllShardsUnrecoverable,checkImpact,getLogTreeInfo,getReplicationInfo,getSettings,applySettingOverride,removeSettingOverride,takeLogTreeSnapshot,takeMaintenanceLogSnapshot,getLogGroupThroughput,getLogGroupCustomCounters,executeAdminCommand,getClusterName,dumpServerConfigJson) where
 import qualified Facebook.FB303.FacebookService_Client
 import Data.IORef
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
@@ -50,19 +50,19 @@ import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
 import qualified Facebook.FB303.Fb303_Types as Fb303_Types
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
-import qualified HStream.Store.Thrift.AdminCommand.Admin_commands_Types as Admin_commands_Types
-import qualified HStream.Store.Thrift.ClusterMembership.Cluster_membership_Types as Cluster_membership_Types
-import qualified HStream.Store.Thrift.Exceptions.Exceptions_Types as Exceptions_Types
-import qualified HStream.Store.Thrift.LogTree.Logtree_Types as Logtree_Types
-import qualified HStream.Store.Thrift.Maintenance.Maintenance_Types as Maintenance_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
-import qualified HStream.Store.Thrift.Safety.Safety_Types as Safety_Types
-import qualified HStream.Store.Thrift.Settings.Settings_Types as Settings_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.AdminCommand.Admin_commands_Types as Admin_commands_Types
+import qualified Facebook.Logdevice.Thrift.ClusterMembership.Cluster_membership_Types as Cluster_membership_Types
+import qualified Facebook.Logdevice.Thrift.Exceptions.Exceptions_Types as Exceptions_Types
+import qualified Facebook.Logdevice.Thrift.LogTree.Logtree_Types as Logtree_Types
+import qualified Facebook.Logdevice.Thrift.Maintenance.Maintenance_Types as Maintenance_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Safety.Safety_Types as Safety_Types
+import qualified Facebook.Logdevice.Thrift.Settings.Settings_Types as Settings_Types
 
 
-import qualified HStream.Store.Thrift.Admin.Admin_Types
-import qualified HStream.Store.Thrift.Admin.AdminAPI
+import qualified Facebook.Logdevice.Thrift.Admin.Admin_Types
+import qualified Facebook.Logdevice.Thrift.Admin.AdminAPI
 seqid = newIORef 0
 getNodesConfig (ip,op) arg_filter = do
   send_getNodesConfig op arg_filter

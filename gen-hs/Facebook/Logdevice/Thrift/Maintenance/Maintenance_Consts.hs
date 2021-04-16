@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Maintenance.Maintenance_Consts where
+module Facebook.Logdevice.Thrift.Maintenance.Maintenance_Consts where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,9 +47,9 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
-import qualified HStream.Store.Thrift.Safety.Safety_Types as Safety_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Safety.Safety_Types as Safety_Types
 
 
-import qualified HStream.Store.Thrift.Maintenance.Maintenance_Types
+import qualified Facebook.Logdevice.Thrift.Maintenance.Maintenance_Types

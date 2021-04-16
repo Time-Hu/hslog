@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.ClusterMembership.Cluster_membership_Types where
+module Facebook.Logdevice.Thrift.ClusterMembership.Cluster_membership_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,8 +47,8 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
 
 
 data ClusterMembershipFailureReason = UNKNOWN|NO_MATCH_IN_CONFIG|NOT_DEAD|NOT_DISABLED|ALREADY_EXISTS|INVALID_REQUEST_NODES_CONFIG  deriving (Show,Eq, Typeable.Typeable, Ord, Bounded)
@@ -109,14 +109,14 @@ instance Serializable.ThriftSerializable ClusterMembershipFailedNode where
   encode = encode_ClusterMembershipFailedNode
   decode = decode_ClusterMembershipFailedNode
 instance Hashable.Hashable ClusterMembershipFailedNode where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` clusterMembershipFailedNode_node_id record   `Hashable.hashWithSalt` clusterMembershipFailedNode_reason record   `Hashable.hashWithSalt` clusterMembershipFailedNode_message record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` clusterMembershipFailedNode_node_id record   `Hashable.hashWithSalt` clusterMembershipFailedNode_reason record   `Hashable.hashWithSalt` clusterMembershipFailedNode_message record  
 instance DeepSeq.NFData ClusterMembershipFailedNode where
   rnf _record0 =
     DeepSeq.rnf (clusterMembershipFailedNode_node_id _record0) `seq`
     DeepSeq.rnf (clusterMembershipFailedNode_reason _record0) `seq`
     DeepSeq.rnf (clusterMembershipFailedNode_message _record0) `seq`
     ()
-instance Arbitrary.Arbitrary ClusterMembershipFailedNode where
+instance Arbitrary.Arbitrary ClusterMembershipFailedNode where 
   arbitrary = Monad.liftM ClusterMembershipFailedNode (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -172,12 +172,12 @@ instance Serializable.ThriftSerializable ClusterMembershipOperationFailed where
   encode = encode_ClusterMembershipOperationFailed
   decode = decode_ClusterMembershipOperationFailed
 instance Hashable.Hashable ClusterMembershipOperationFailed where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` clusterMembershipOperationFailed_failed_nodes record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` clusterMembershipOperationFailed_failed_nodes record  
 instance DeepSeq.NFData ClusterMembershipOperationFailed where
   rnf _record9 =
     DeepSeq.rnf (clusterMembershipOperationFailed_failed_nodes _record9) `seq`
     ()
-instance Arbitrary.Arbitrary ClusterMembershipOperationFailed where
+instance Arbitrary.Arbitrary ClusterMembershipOperationFailed where 
   arbitrary = Monad.liftM ClusterMembershipOperationFailed (Arbitrary.arbitrary)
   shrink obj | obj == default_ClusterMembershipOperationFailed = []
              | otherwise = Maybe.catMaybes
@@ -222,12 +222,12 @@ instance Serializable.ThriftSerializable AddSingleNodeRequest where
   encode = encode_AddSingleNodeRequest
   decode = decode_AddSingleNodeRequest
 instance Hashable.Hashable AddSingleNodeRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addSingleNodeRequest_new_config record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addSingleNodeRequest_new_config record  
 instance DeepSeq.NFData AddSingleNodeRequest where
   rnf _record20 =
     DeepSeq.rnf (addSingleNodeRequest_new_config _record20) `seq`
     ()
-instance Arbitrary.Arbitrary AddSingleNodeRequest where
+instance Arbitrary.Arbitrary AddSingleNodeRequest where 
   arbitrary = Monad.liftM AddSingleNodeRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_AddSingleNodeRequest = []
              | otherwise = Maybe.catMaybes
@@ -272,12 +272,12 @@ instance Serializable.ThriftSerializable AddNodesRequest where
   encode = encode_AddNodesRequest
   decode = decode_AddNodesRequest
 instance Hashable.Hashable AddNodesRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodesRequest_new_node_requests record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodesRequest_new_node_requests record  
 instance DeepSeq.NFData AddNodesRequest where
   rnf _record27 =
     DeepSeq.rnf (addNodesRequest_new_node_requests _record27) `seq`
     ()
-instance Arbitrary.Arbitrary AddNodesRequest where
+instance Arbitrary.Arbitrary AddNodesRequest where 
   arbitrary = Monad.liftM AddNodesRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_AddNodesRequest = []
              | otherwise = Maybe.catMaybes
@@ -324,13 +324,13 @@ instance Serializable.ThriftSerializable AddNodesResponse where
   encode = encode_AddNodesResponse
   decode = decode_AddNodesResponse
 instance Hashable.Hashable AddNodesResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodesResponse_added_nodes record   `Hashable.hashWithSalt` addNodesResponse_new_nodes_configuration_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` addNodesResponse_added_nodes record   `Hashable.hashWithSalt` addNodesResponse_new_nodes_configuration_version record  
 instance DeepSeq.NFData AddNodesResponse where
   rnf _record38 =
     DeepSeq.rnf (addNodesResponse_added_nodes _record38) `seq`
     DeepSeq.rnf (addNodesResponse_new_nodes_configuration_version _record38) `seq`
     ()
-instance Arbitrary.Arbitrary AddNodesResponse where
+instance Arbitrary.Arbitrary AddNodesResponse where 
   arbitrary = Monad.liftM AddNodesResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_AddNodesResponse = []
@@ -382,13 +382,13 @@ instance Serializable.ThriftSerializable UpdateSingleNodeRequest where
   encode = encode_UpdateSingleNodeRequest
   decode = decode_UpdateSingleNodeRequest
 instance Hashable.Hashable UpdateSingleNodeRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateSingleNodeRequest_node_to_be_updated record   `Hashable.hashWithSalt` updateSingleNodeRequest_new_config record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateSingleNodeRequest_node_to_be_updated record   `Hashable.hashWithSalt` updateSingleNodeRequest_new_config record  
 instance DeepSeq.NFData UpdateSingleNodeRequest where
   rnf _record50 =
     DeepSeq.rnf (updateSingleNodeRequest_node_to_be_updated _record50) `seq`
     DeepSeq.rnf (updateSingleNodeRequest_new_config _record50) `seq`
     ()
-instance Arbitrary.Arbitrary UpdateSingleNodeRequest where
+instance Arbitrary.Arbitrary UpdateSingleNodeRequest where 
   arbitrary = Monad.liftM UpdateSingleNodeRequest (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_UpdateSingleNodeRequest = []
@@ -438,12 +438,12 @@ instance Serializable.ThriftSerializable UpdateNodesRequest where
   encode = encode_UpdateNodesRequest
   decode = decode_UpdateNodesRequest
 instance Hashable.Hashable UpdateNodesRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodesRequest_node_requests record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodesRequest_node_requests record  
 instance DeepSeq.NFData UpdateNodesRequest where
   rnf _record58 =
     DeepSeq.rnf (updateNodesRequest_node_requests _record58) `seq`
     ()
-instance Arbitrary.Arbitrary UpdateNodesRequest where
+instance Arbitrary.Arbitrary UpdateNodesRequest where 
   arbitrary = Monad.liftM UpdateNodesRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_UpdateNodesRequest = []
              | otherwise = Maybe.catMaybes
@@ -490,13 +490,13 @@ instance Serializable.ThriftSerializable UpdateNodesResponse where
   encode = encode_UpdateNodesResponse
   decode = decode_UpdateNodesResponse
 instance Hashable.Hashable UpdateNodesResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodesResponse_updated_nodes record   `Hashable.hashWithSalt` updateNodesResponse_new_nodes_configuration_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` updateNodesResponse_updated_nodes record   `Hashable.hashWithSalt` updateNodesResponse_new_nodes_configuration_version record  
 instance DeepSeq.NFData UpdateNodesResponse where
   rnf _record69 =
     DeepSeq.rnf (updateNodesResponse_updated_nodes _record69) `seq`
     DeepSeq.rnf (updateNodesResponse_new_nodes_configuration_version _record69) `seq`
     ()
-instance Arbitrary.Arbitrary UpdateNodesResponse where
+instance Arbitrary.Arbitrary UpdateNodesResponse where 
   arbitrary = Monad.liftM UpdateNodesResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_UpdateNodesResponse = []
@@ -546,12 +546,12 @@ instance Serializable.ThriftSerializable RemoveNodesRequest where
   encode = encode_RemoveNodesRequest
   decode = decode_RemoveNodesRequest
 instance Hashable.Hashable RemoveNodesRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodesRequest_node_filters record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodesRequest_node_filters record  
 instance DeepSeq.NFData RemoveNodesRequest where
   rnf _record81 =
     DeepSeq.rnf (removeNodesRequest_node_filters _record81) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveNodesRequest where
+instance Arbitrary.Arbitrary RemoveNodesRequest where 
   arbitrary = Monad.liftM RemoveNodesRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveNodesRequest = []
              | otherwise = Maybe.catMaybes
@@ -598,13 +598,13 @@ instance Serializable.ThriftSerializable RemoveNodesResponse where
   encode = encode_RemoveNodesResponse
   decode = decode_RemoveNodesResponse
 instance Hashable.Hashable RemoveNodesResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodesResponse_removed_nodes record   `Hashable.hashWithSalt` removeNodesResponse_new_nodes_configuration_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeNodesResponse_removed_nodes record   `Hashable.hashWithSalt` removeNodesResponse_new_nodes_configuration_version record  
 instance DeepSeq.NFData RemoveNodesResponse where
   rnf _record92 =
     DeepSeq.rnf (removeNodesResponse_removed_nodes _record92) `seq`
     DeepSeq.rnf (removeNodesResponse_new_nodes_configuration_version _record92) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveNodesResponse where
+instance Arbitrary.Arbitrary RemoveNodesResponse where 
   arbitrary = Monad.liftM RemoveNodesResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveNodesResponse = []
@@ -654,12 +654,12 @@ instance Serializable.ThriftSerializable MarkShardsAsProvisionedRequest where
   encode = encode_MarkShardsAsProvisionedRequest
   decode = decode_MarkShardsAsProvisionedRequest
 instance Hashable.Hashable MarkShardsAsProvisionedRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisionedRequest_shards record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisionedRequest_shards record  
 instance DeepSeq.NFData MarkShardsAsProvisionedRequest where
   rnf _record104 =
     DeepSeq.rnf (markShardsAsProvisionedRequest_shards _record104) `seq`
     ()
-instance Arbitrary.Arbitrary MarkShardsAsProvisionedRequest where
+instance Arbitrary.Arbitrary MarkShardsAsProvisionedRequest where 
   arbitrary = Monad.liftM MarkShardsAsProvisionedRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_MarkShardsAsProvisionedRequest = []
              | otherwise = Maybe.catMaybes
@@ -706,13 +706,13 @@ instance Serializable.ThriftSerializable MarkShardsAsProvisionedResponse where
   encode = encode_MarkShardsAsProvisionedResponse
   decode = decode_MarkShardsAsProvisionedResponse
 instance Hashable.Hashable MarkShardsAsProvisionedResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisionedResponse_updated_shards record   `Hashable.hashWithSalt` markShardsAsProvisionedResponse_new_nodes_configuration_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markShardsAsProvisionedResponse_updated_shards record   `Hashable.hashWithSalt` markShardsAsProvisionedResponse_new_nodes_configuration_version record  
 instance DeepSeq.NFData MarkShardsAsProvisionedResponse where
   rnf _record115 =
     DeepSeq.rnf (markShardsAsProvisionedResponse_updated_shards _record115) `seq`
     DeepSeq.rnf (markShardsAsProvisionedResponse_new_nodes_configuration_version _record115) `seq`
     ()
-instance Arbitrary.Arbitrary MarkShardsAsProvisionedResponse where
+instance Arbitrary.Arbitrary MarkShardsAsProvisionedResponse where 
   arbitrary = Monad.liftM MarkShardsAsProvisionedResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_MarkShardsAsProvisionedResponse = []
@@ -762,12 +762,12 @@ instance Serializable.ThriftSerializable BumpGenerationRequest where
   encode = encode_BumpGenerationRequest
   decode = decode_BumpGenerationRequest
 instance Hashable.Hashable BumpGenerationRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpGenerationRequest_node_filters record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpGenerationRequest_node_filters record  
 instance DeepSeq.NFData BumpGenerationRequest where
   rnf _record127 =
     DeepSeq.rnf (bumpGenerationRequest_node_filters _record127) `seq`
     ()
-instance Arbitrary.Arbitrary BumpGenerationRequest where
+instance Arbitrary.Arbitrary BumpGenerationRequest where 
   arbitrary = Monad.liftM BumpGenerationRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_BumpGenerationRequest = []
              | otherwise = Maybe.catMaybes
@@ -814,13 +814,13 @@ instance Serializable.ThriftSerializable BumpGenerationResponse where
   encode = encode_BumpGenerationResponse
   decode = decode_BumpGenerationResponse
 instance Hashable.Hashable BumpGenerationResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpGenerationResponse_bumped_nodes record   `Hashable.hashWithSalt` bumpGenerationResponse_new_nodes_configuration_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bumpGenerationResponse_bumped_nodes record   `Hashable.hashWithSalt` bumpGenerationResponse_new_nodes_configuration_version record  
 instance DeepSeq.NFData BumpGenerationResponse where
   rnf _record138 =
     DeepSeq.rnf (bumpGenerationResponse_bumped_nodes _record138) `seq`
     DeepSeq.rnf (bumpGenerationResponse_new_nodes_configuration_version _record138) `seq`
     ()
-instance Arbitrary.Arbitrary BumpGenerationResponse where
+instance Arbitrary.Arbitrary BumpGenerationResponse where 
   arbitrary = Monad.liftM BumpGenerationResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_BumpGenerationResponse = []
@@ -870,12 +870,12 @@ instance Serializable.ThriftSerializable BootstrapClusterRequest where
   encode = encode_BootstrapClusterRequest
   decode = decode_BootstrapClusterRequest
 instance Hashable.Hashable BootstrapClusterRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapClusterRequest_metadata_replication_property record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapClusterRequest_metadata_replication_property record  
 instance DeepSeq.NFData BootstrapClusterRequest where
   rnf _record150 =
     DeepSeq.rnf (bootstrapClusterRequest_metadata_replication_property _record150) `seq`
     ()
-instance Arbitrary.Arbitrary BootstrapClusterRequest where
+instance Arbitrary.Arbitrary BootstrapClusterRequest where 
   arbitrary = Monad.liftM BootstrapClusterRequest (Arbitrary.arbitrary)
   shrink obj | obj == default_BootstrapClusterRequest = []
              | otherwise = Maybe.catMaybes
@@ -920,12 +920,12 @@ instance Serializable.ThriftSerializable BootstrapClusterResponse where
   encode = encode_BootstrapClusterResponse
   decode = decode_BootstrapClusterResponse
 instance Hashable.Hashable BootstrapClusterResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapClusterResponse_new_nodes_configuration_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` bootstrapClusterResponse_new_nodes_configuration_version record  
 instance DeepSeq.NFData BootstrapClusterResponse where
   rnf _record163 =
     DeepSeq.rnf (bootstrapClusterResponse_new_nodes_configuration_version _record163) `seq`
     ()
-instance Arbitrary.Arbitrary BootstrapClusterResponse where
+instance Arbitrary.Arbitrary BootstrapClusterResponse where 
   arbitrary = Monad.liftM BootstrapClusterResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_BootstrapClusterResponse = []
              | otherwise = Maybe.catMaybes

@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs HStream.Store.Thrift.AdminCommand
+namespace hs Facebook.Logdevice.Thrift.AdminCommand
 
 
 struct AdminCommandRequest {

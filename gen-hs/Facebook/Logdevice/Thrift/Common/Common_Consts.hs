@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Common.Common_Consts where
+module Facebook.Logdevice.Thrift.Common.Common_Consts where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -48,6 +48,7 @@ import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
 
-import qualified HStream.Store.Thrift.Common.Common_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types
 aLL_SHARDS :: Int.Int16
 aLL_SHARDS = -1
+

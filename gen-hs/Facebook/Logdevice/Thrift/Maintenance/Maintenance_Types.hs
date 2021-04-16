@@ -13,7 +13,7 @@
 --  @generated
 -----------------------------------------------------------------
 
-module HStream.Store.Thrift.Maintenance.Maintenance_Types where
+module Facebook.Logdevice.Thrift.Maintenance.Maintenance_Types where
 import Prelude ( Bool(..), Enum, Float, IO, Double, String, Maybe(..),
                  Eq, Show, Ord,
                  concat, error, fromIntegral, fromEnum, length, map,
@@ -47,9 +47,9 @@ import qualified Thrift.Types as Types
 import qualified Thrift.Serializable as Serializable
 import qualified Thrift.Arbitraries as Arbitraries
 
-import qualified HStream.Store.Thrift.Common.Common_Types as Common_Types
-import qualified HStream.Store.Thrift.Nodes.Nodes_Types as Nodes_Types
-import qualified HStream.Store.Thrift.Safety.Safety_Types as Safety_Types
+import qualified Facebook.Logdevice.Thrift.Common.Common_Types as Common_Types
+import qualified Facebook.Logdevice.Thrift.Nodes.Nodes_Types as Nodes_Types
+import qualified Facebook.Logdevice.Thrift.Safety.Safety_Types as Safety_Types
 
 
 data MaintenanceProgress = UNKNOWN|BLOCKED_UNTIL_SAFE|IN_PROGRESS|COMPLETED  deriving (Show,Eq, Typeable.Typeable, Ord, Bounded)
@@ -171,7 +171,7 @@ instance Serializable.ThriftSerializable MaintenanceDefinition where
   encode = encode_MaintenanceDefinition
   decode = decode_MaintenanceDefinition
 instance Hashable.Hashable MaintenanceDefinition where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceDefinition_shards record   `Hashable.hashWithSalt` maintenanceDefinition_shard_target_state record   `Hashable.hashWithSalt` maintenanceDefinition_sequencer_nodes record   `Hashable.hashWithSalt` maintenanceDefinition_sequencer_target_state record   `Hashable.hashWithSalt` maintenanceDefinition_user record   `Hashable.hashWithSalt` maintenanceDefinition_reason record   `Hashable.hashWithSalt` maintenanceDefinition_extras record   `Hashable.hashWithSalt` maintenanceDefinition_skip_safety_checks record   `Hashable.hashWithSalt` maintenanceDefinition_force_restore_rebuilding record   `Hashable.hashWithSalt` maintenanceDefinition_group record   `Hashable.hashWithSalt` maintenanceDefinition_ttl_seconds record   `Hashable.hashWithSalt` maintenanceDefinition_allow_passive_drains record   `Hashable.hashWithSalt` maintenanceDefinition_group_id record   `Hashable.hashWithSalt` maintenanceDefinition_last_check_impact_result record   `Hashable.hashWithSalt` maintenanceDefinition_expires_on record   `Hashable.hashWithSalt` maintenanceDefinition_created_on record   `Hashable.hashWithSalt` maintenanceDefinition_progress record   `Hashable.hashWithSalt` maintenanceDefinition_priority record   `Hashable.hashWithSalt` maintenanceDefinition_skip_capacity_checks record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceDefinition_shards record   `Hashable.hashWithSalt` maintenanceDefinition_shard_target_state record   `Hashable.hashWithSalt` maintenanceDefinition_sequencer_nodes record   `Hashable.hashWithSalt` maintenanceDefinition_sequencer_target_state record   `Hashable.hashWithSalt` maintenanceDefinition_user record   `Hashable.hashWithSalt` maintenanceDefinition_reason record   `Hashable.hashWithSalt` maintenanceDefinition_extras record   `Hashable.hashWithSalt` maintenanceDefinition_skip_safety_checks record   `Hashable.hashWithSalt` maintenanceDefinition_force_restore_rebuilding record   `Hashable.hashWithSalt` maintenanceDefinition_group record   `Hashable.hashWithSalt` maintenanceDefinition_ttl_seconds record   `Hashable.hashWithSalt` maintenanceDefinition_allow_passive_drains record   `Hashable.hashWithSalt` maintenanceDefinition_group_id record   `Hashable.hashWithSalt` maintenanceDefinition_last_check_impact_result record   `Hashable.hashWithSalt` maintenanceDefinition_expires_on record   `Hashable.hashWithSalt` maintenanceDefinition_created_on record   `Hashable.hashWithSalt` maintenanceDefinition_progress record   `Hashable.hashWithSalt` maintenanceDefinition_priority record   `Hashable.hashWithSalt` maintenanceDefinition_skip_capacity_checks record  
 instance DeepSeq.NFData MaintenanceDefinition where
   rnf _record0 =
     DeepSeq.rnf (maintenanceDefinition_shards _record0) `seq`
@@ -194,7 +194,7 @@ instance DeepSeq.NFData MaintenanceDefinition where
     DeepSeq.rnf (maintenanceDefinition_priority _record0) `seq`
     DeepSeq.rnf (maintenanceDefinition_skip_capacity_checks _record0) `seq`
     ()
-instance Arbitrary.Arbitrary MaintenanceDefinition where
+instance Arbitrary.Arbitrary MaintenanceDefinition where 
   arbitrary = Monad.liftM MaintenanceDefinition (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -331,13 +331,13 @@ instance Serializable.ThriftSerializable ClusterMaintenanceState where
   encode = encode_ClusterMaintenanceState
   decode = decode_ClusterMaintenanceState
 instance Hashable.Hashable ClusterMaintenanceState where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` clusterMaintenanceState_maintenances record   `Hashable.hashWithSalt` clusterMaintenanceState_version record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` clusterMaintenanceState_maintenances record   `Hashable.hashWithSalt` clusterMaintenanceState_version record  
 instance DeepSeq.NFData ClusterMaintenanceState where
   rnf _record39 =
     DeepSeq.rnf (clusterMaintenanceState_maintenances _record39) `seq`
     DeepSeq.rnf (clusterMaintenanceState_version _record39) `seq`
     ()
-instance Arbitrary.Arbitrary ClusterMaintenanceState where
+instance Arbitrary.Arbitrary ClusterMaintenanceState where 
   arbitrary = Monad.liftM ClusterMaintenanceState (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_ClusterMaintenanceState = []
@@ -387,12 +387,12 @@ instance Serializable.ThriftSerializable MaintenanceDefinitionResponse where
   encode = encode_MaintenanceDefinitionResponse
   decode = decode_MaintenanceDefinitionResponse
 instance Hashable.Hashable MaintenanceDefinitionResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceDefinitionResponse_maintenances record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenanceDefinitionResponse_maintenances record  
 instance DeepSeq.NFData MaintenanceDefinitionResponse where
   rnf _record51 =
     DeepSeq.rnf (maintenanceDefinitionResponse_maintenances _record51) `seq`
     ()
-instance Arbitrary.Arbitrary MaintenanceDefinitionResponse where
+instance Arbitrary.Arbitrary MaintenanceDefinitionResponse where 
   arbitrary = Monad.liftM MaintenanceDefinitionResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_MaintenanceDefinitionResponse = []
              | otherwise = Maybe.catMaybes
@@ -439,13 +439,13 @@ instance Serializable.ThriftSerializable MaintenancesFilter where
   encode = encode_MaintenancesFilter
   decode = decode_MaintenancesFilter
 instance Hashable.Hashable MaintenancesFilter where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenancesFilter_group_ids record   `Hashable.hashWithSalt` maintenancesFilter_user record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` maintenancesFilter_group_ids record   `Hashable.hashWithSalt` maintenancesFilter_user record  
 instance DeepSeq.NFData MaintenancesFilter where
   rnf _record62 =
     DeepSeq.rnf (maintenancesFilter_group_ids _record62) `seq`
     DeepSeq.rnf (maintenancesFilter_user _record62) `seq`
     ()
-instance Arbitrary.Arbitrary MaintenancesFilter where
+instance Arbitrary.Arbitrary MaintenancesFilter where 
   arbitrary = Monad.liftM MaintenancesFilter (Arbitrary.arbitrary)
           `Monad.ap`(Monad.liftM Just Arbitrary.arbitrary)
   shrink obj | obj == default_MaintenancesFilter = []
@@ -499,14 +499,14 @@ instance Serializable.ThriftSerializable RemoveMaintenancesRequest where
   encode = encode_RemoveMaintenancesRequest
   decode = decode_RemoveMaintenancesRequest
 instance Hashable.Hashable RemoveMaintenancesRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenancesRequest_filter record   `Hashable.hashWithSalt` removeMaintenancesRequest_user record   `Hashable.hashWithSalt` removeMaintenancesRequest_reason record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenancesRequest_filter record   `Hashable.hashWithSalt` removeMaintenancesRequest_user record   `Hashable.hashWithSalt` removeMaintenancesRequest_reason record  
 instance DeepSeq.NFData RemoveMaintenancesRequest where
   rnf _record74 =
     DeepSeq.rnf (removeMaintenancesRequest_filter _record74) `seq`
     DeepSeq.rnf (removeMaintenancesRequest_user _record74) `seq`
     DeepSeq.rnf (removeMaintenancesRequest_reason _record74) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveMaintenancesRequest where
+instance Arbitrary.Arbitrary RemoveMaintenancesRequest where 
   arbitrary = Monad.liftM RemoveMaintenancesRequest (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
@@ -561,12 +561,12 @@ instance Serializable.ThriftSerializable RemoveMaintenancesResponse where
   encode = encode_RemoveMaintenancesResponse
   decode = decode_RemoveMaintenancesResponse
 instance Hashable.Hashable RemoveMaintenancesResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenancesResponse_maintenances record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` removeMaintenancesResponse_maintenances record  
 instance DeepSeq.NFData RemoveMaintenancesResponse where
   rnf _record83 =
     DeepSeq.rnf (removeMaintenancesResponse_maintenances _record83) `seq`
     ()
-instance Arbitrary.Arbitrary RemoveMaintenancesResponse where
+instance Arbitrary.Arbitrary RemoveMaintenancesResponse where 
   arbitrary = Monad.liftM RemoveMaintenancesResponse (Arbitrary.arbitrary)
   shrink obj | obj == default_RemoveMaintenancesResponse = []
              | otherwise = Maybe.catMaybes
@@ -613,13 +613,13 @@ instance Serializable.ThriftSerializable MarkAllShardsUnrecoverableRequest where
   encode = encode_MarkAllShardsUnrecoverableRequest
   decode = decode_MarkAllShardsUnrecoverableRequest
 instance Hashable.Hashable MarkAllShardsUnrecoverableRequest where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverableRequest_user record   `Hashable.hashWithSalt` markAllShardsUnrecoverableRequest_reason record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverableRequest_user record   `Hashable.hashWithSalt` markAllShardsUnrecoverableRequest_reason record  
 instance DeepSeq.NFData MarkAllShardsUnrecoverableRequest where
   rnf _record94 =
     DeepSeq.rnf (markAllShardsUnrecoverableRequest_user _record94) `seq`
     DeepSeq.rnf (markAllShardsUnrecoverableRequest_reason _record94) `seq`
     ()
-instance Arbitrary.Arbitrary MarkAllShardsUnrecoverableRequest where
+instance Arbitrary.Arbitrary MarkAllShardsUnrecoverableRequest where 
   arbitrary = Monad.liftM MarkAllShardsUnrecoverableRequest (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_MarkAllShardsUnrecoverableRequest = []
@@ -671,13 +671,13 @@ instance Serializable.ThriftSerializable MarkAllShardsUnrecoverableResponse wher
   encode = encode_MarkAllShardsUnrecoverableResponse
   decode = decode_MarkAllShardsUnrecoverableResponse
 instance Hashable.Hashable MarkAllShardsUnrecoverableResponse where
-  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverableResponse_shards_succeeded record   `Hashable.hashWithSalt` markAllShardsUnrecoverableResponse_shards_failed record
+  hashWithSalt salt record = salt   `Hashable.hashWithSalt` markAllShardsUnrecoverableResponse_shards_succeeded record   `Hashable.hashWithSalt` markAllShardsUnrecoverableResponse_shards_failed record  
 instance DeepSeq.NFData MarkAllShardsUnrecoverableResponse where
   rnf _record102 =
     DeepSeq.rnf (markAllShardsUnrecoverableResponse_shards_succeeded _record102) `seq`
     DeepSeq.rnf (markAllShardsUnrecoverableResponse_shards_failed _record102) `seq`
     ()
-instance Arbitrary.Arbitrary MarkAllShardsUnrecoverableResponse where
+instance Arbitrary.Arbitrary MarkAllShardsUnrecoverableResponse where 
   arbitrary = Monad.liftM MarkAllShardsUnrecoverableResponse (Arbitrary.arbitrary)
           `Monad.ap`(Arbitrary.arbitrary)
   shrink obj | obj == default_MarkAllShardsUnrecoverableResponse = []

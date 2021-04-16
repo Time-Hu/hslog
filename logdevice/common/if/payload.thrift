@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs HStream.Store.Thrift.Payload
+namespace hs Facebook.Logdevice.Thrift.Payload
 // This file defines format for storing multiple PayloadGroups.
 // Note that same format is also used to store single PayloadGroup,
 // when batching is not used.
