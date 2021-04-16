@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs Facebook.Logdevice.Configuration.Thrift
 
 typedef byte (cpp2.type = "std::uint8_t") u8
 typedef i16 (cpp2.type = "std::uint16_t") u16

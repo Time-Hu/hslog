@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs Facebook.logdevice.Checkpointing.Thrift
 
 typedef i64 (cpp2.type = "std::uint64_t") u64
 

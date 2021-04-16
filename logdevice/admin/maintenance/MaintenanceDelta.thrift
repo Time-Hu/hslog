@@ -6,10 +6,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-include "/Workplace/logth/hslog/logdevice/admin/if/maintenance.thrift"
 
 
-namespace hs Facebook.Logdevice.Maintenance
 
 union MaintenanceDelta {
   1: list<maintenance.MaintenanceDefinition> apply_maintenances,

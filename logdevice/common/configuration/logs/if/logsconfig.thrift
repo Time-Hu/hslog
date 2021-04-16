@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 
-namespace hs Facebook.Logdevice.Logsconfig
 
 typedef byte (cpp2.type = "std::uint8_t") u8
 typedef i16 (cpp2.type = "std::uint16_t") u16

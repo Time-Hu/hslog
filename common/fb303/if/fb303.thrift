@@ -15,7 +15,6 @@
  *
  * @author Mark Slee <mcslee@facebook.com>
  */
-namespace hs Facebook.FB303
 
 /**
  * Common status reporting mechanism across all services

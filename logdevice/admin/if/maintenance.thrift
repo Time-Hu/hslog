@@ -10,7 +10,6 @@ include "/Workplace/logth/hslog/logdevice/common/if/common.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/nodes.thrift"
 include "/Workplace/logth/hslog/logdevice/admin/if/safety.thrift"
 
-namespace hs Facebook.Logdevice.Thrift.Maintenance
 
 /**
  * What is the progress for a particular maintenance definition.

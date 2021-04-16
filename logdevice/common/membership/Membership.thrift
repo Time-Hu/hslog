@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace cpp2 facebook.logdevice.membership.thrift.Membership
 
 
 typedef byte (cpp2.type = "std::uint8_t") u8

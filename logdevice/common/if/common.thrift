@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs Facebook.Logdevice.Thrift.Common
 
 /**
  * Because thrift doesn't have a u64.

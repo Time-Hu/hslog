@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs Facebook.Logdevice.Configuration.AllReadStreamsDebugConfig.Thrift
 
 const string kMatchAll = "*";
 

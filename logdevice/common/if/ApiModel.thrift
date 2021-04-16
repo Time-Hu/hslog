@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-namespace hs Facebook.Logdevice.Thrift.APIModel
 // Define alias for zero-copy field types
 typedef binary (cpp2.type = "std::unique_ptr<folly::IOBuf>") IOBufPtr
 
